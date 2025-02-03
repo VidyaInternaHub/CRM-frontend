@@ -40,7 +40,7 @@ const NavButtons = ({ data }) => {
   const [activeBtn, setActiveBtn] = useState(null);
   return (
     <>
-      <div className="hidden justify-between gap-3 font-semibold lg:flex items-center text-black-2 lg:text-sm xl:text-xl mx-2">
+      <div className="hidden justify-between gap-3 font-semibold lg:flex items-center text-black-2 text-[0.5rem] lg:text-[0.6rem] 2xl:text-sm mx-2">
         {data.map((btn) => (
           <div
             key={btn.id}
