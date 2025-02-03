@@ -1,56 +1,60 @@
 import React, { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import logo from "../assets/bitrix24-seeklogo.svg";
 import { ImUser } from "react-icons/im";
 import { FaGlobeAmericas } from "react-icons/fa";
 
 const NavButtonsData = [
-  { label: "Product" },
-  { label: "Pricing" },
-  { label: "Resources" },
-  { label: "solutions" },
-  { label: "Integrations" },
-  { label: "partners" },
-  { label: "why bitrix24" },
+  { id: 0, text: "Product", type: "dropdown" },
+  { id: 1, text: "Pricing", type: "button" },
+  { id: 2, text: "Resources", type: "dropdown" },
+  { id: 3, text: "solutions", type: "dropdown" },
+  { id: 4, text: "Integrations", type: "dropdown" },
+  { id: 5, text: "partners", type: "dropdown" },
+  { id: 6, text: "why bitrix24", type: "dropdown" },
 ];
 
-const DropDownIcon = () => {
+const NavButton = ({ text, active, type }) => {
   return (
     <>
-      <MdOutlineKeyboardArrowDown className="text-2xl text-gray" />
-    </>
-  );
-};
-
-const NavButtons = ({ data }) => {
-  return (
-    <>
-      <div className="hidden justify-between gap-2 font-semibold lg:flex text-black-2 lg:text-sm xl:text-md ">
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="flex cursor-pointer items-center hover:text-blue"
-          >
-            <div>{item.label.toUpperCase()}</div>
+      <div
+        className={`flex cursor-pointer items-center hover:text-blue ${
+          active && "text-blue"
+        }`}
+      >
+        <div>{text.toUpperCase()}</div>
+        {type === "dropdown" &&
+          (active ? (
+            <MdOutlineKeyboardArrowUp className="text-2xl text-blue" />
+          ) : (
             <MdOutlineKeyboardArrowDown className="text-2xl text-gray" />
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );
 };
 
-const NavButton = ({ label }) => {
-  const [isOpen, setOpen] = useState(false);
-
+const NavButtons = ({ data }) => {
+  const [activeBtn, setActiveBtn] = useState(null);
   return (
     <>
-      <div
-        className="flex cursor-pointer items-center hover:text-blue"
-      >
-        <div>{label.toUpperCase()}</div>
-        <MdOutlineKeyboardArrowDown className="text-2xl text-gray" />
+      <div className="hidden justify-between gap-3 font-semibold lg:flex items-center text-black-2 lg:text-sm xl:text-xl mx-2">
+        {data.map((btn) => (
+          <div
+            key={btn.id}
+            onClick={() => {
+              activeBtn === btn.id ? setActiveBtn(null) : setActiveBtn(btn.id);
+            }}
+          >
+            <NavButton
+              text={btn.text}
+              active={activeBtn === btn.id}
+              type={btn.type}
+            />
+          </div>
+        ))}
       </div>
     </>
   );
