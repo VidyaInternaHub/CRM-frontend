@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+<<<<<<< HEAD
 const withMT = require("@material-tailwind/react/utils/withMT");
 
 module.exports = withMT({
@@ -7,6 +8,10 @@ module.exports = withMT({
     "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
     "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
+=======
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+>>>>>>> 502ef73cf00fefadf84b39426bd5a5880286f682
   theme: {
     colors: {
       white: "#ffffff",
@@ -46,8 +51,16 @@ module.exports = withMT({
       },
       backgroundImage: {
         "hero-image": "url('/src/assets/hero-backgroundsvg.svg')",
+<<<<<<< HEAD
+=======
+        "footer-texture": "url('/img/footer-texture.png')",
+>>>>>>> 502ef73cf00fefadf84b39426bd5a5880286f682
       },
     },
   },
   plugins: [],
+<<<<<<< HEAD
 });
+=======
+};
+>>>>>>> 502ef73cf00fefadf84b39426bd5a5880286f682
