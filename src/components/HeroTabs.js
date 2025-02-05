@@ -193,9 +193,8 @@ const HeroTabs = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`pb-3 ${
-              activeTab === tab.id && "relative cursor-pointer text-blue-2 pb-3"
-            }`}
+            className={`pb-3 ${activeTab === tab.id && "relative cursor-pointer text-blue-2 pb-3"
+              }`}
             onMouseEnter={() => {
               setActiveTab(tab.id);
               setProgressActive(false);
@@ -223,9 +222,8 @@ const HeroTabs = () => {
           {tabs.map((tab) => (
             <div
               key={tab.id}
-              className={`absolute w-full top-0 flex flex-col items-center lg:justify-start lg:flex-row transition-opacity duration-500 ease-in-out ${
-                activeTab === tab.id ? " opacity-100" : " opacity-0"
-              } `}
+              className={`absolute w-full top-0 flex flex-col items-center lg:justify-start lg:flex-row transition-opacity duration-500 ease-in-out ${activeTab === tab.id ? " opacity-100" : " opacity-0"
+                } `}
             >
               <div className="lg:hidden w-full text-2xl text-blue flex justify-between mb-3 ">
                 <MdKeyboardArrowLeft
@@ -273,9 +271,8 @@ const HeroTabs = () => {
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`absolute top-0 lg:top-20 flex lg:justify-end transition-opacity duration-500 ease-in-out ${
-              activeTab === tab.id ? " opacity-100" : " opacity-0"
-            }`}
+            className={`absolute top-0 lg:top-20 flex lg:justify-end transition-opacity duration-500 ease-in-out ${activeTab === tab.id ? " opacity-100" : " opacity-0"
+              }`}
           >
             <img src={tab.image} alt="__" className=" w-96 lg:w-3/5" />
           </div>
