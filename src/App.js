@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <div className="App font-bs-font w-screen mx-auto">
+    <div className="App font-bs-font mx-auto">
       <BrowserRouter>
         <Navbar />
         <Routes>

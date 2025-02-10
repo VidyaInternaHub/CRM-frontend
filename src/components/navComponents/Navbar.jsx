@@ -8,15 +8,16 @@ import MenuIcon from "./MenuIcon";
 import NavButton from "./NavButton";
 import useClickOutside from "../../hooks/useClickOutSide";
 import NavProduct from "./NavProduct";
+import NavSolutions from "./NavSolutions";
 
 const NavButtonsData = [
-  { id: 1, name: "Product" },
+  { id: 1, name: "Product", dropdown: <NavProduct /> },
   { id: 2, name: "Pricing" },
-  { id: 3, name: "Resources" },
-  { id: 4, name: "solutions" },
-  { id: 5, name: "Integrations" },
-  { id: 6, name: "partners" },
-  { id: 7, name: "why bitrix24" },
+  { id: 3, name: "Resources", dropdown: "" },
+  { id: 4, name: "solutions", dropdown: <NavSolutions /> },
+  { id: 5, name: "Integrations", dropdown: "" },
+  { id: 6, name: "partners", dropdown: "" },
+  { id: 7, name: "why bitrix24", dropdown: "" },
 ];
 
 const SearchBox = () => {
@@ -152,13 +153,9 @@ const Navbar = () => {
         active !== 0 && (
           <div className="fixed hidden lg:flex top-20 w-full z-40">
             <DropdownContainer>
-              {active === 1 ? (
-                <NavProduct />
-              ) : (
-                NavButtonsData.find(
-                  (btn) => btn.id === active
-                ).name.toUpperCase()
-              )}
+              {![0, 2].includes(active) &&
+                NavButtonsData[active - 1].dropdown !== "" &&
+                NavButtonsData[active - 1].dropdown}
             </DropdownContainer>
           </div>
         )
