@@ -15,9 +15,8 @@ module.exports = withMT({
       "green-button": "#bdf300",
       "gray-1": "#e1e1e1",
       "gray-2": "#bbbbbb",
-      "gray-menu": "#F8F8F8",
-      "black-main": "#121212",
-      "black-light": "#262626",
+      "black-2": "#262626",
+      black: "#121212",
     },
 
     fontSize: {
