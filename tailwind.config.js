@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     colors: {
       white: "#ffffff",
@@ -12,6 +18,7 @@ module.exports = {
       "gray-2": "#bbbbbb",
       "black-2": "#262626",
       black: "#121212",
+      navDropDownMenu: "#F8F8F8",
     },
 
     fontSize: {
@@ -40,9 +47,8 @@ module.exports = {
       },
       backgroundImage: {
         "hero-image": "url('/src/assets/hero-backgroundsvg.svg')",
-        "footer-texture": "url('/img/footer-texture.png')",
       },
     },
   },
   plugins: [],
-};
+});
