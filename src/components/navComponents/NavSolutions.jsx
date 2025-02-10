@@ -70,7 +70,7 @@ const NavSolutions = () => {
                             <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-sm '>
                                 <div className='w-full flex justify-start gap-x-2 bg-slate-100 text-[#409eef] hover:bg-[#409eef] hover:text-white p-4 px-6 rounded-full group'>
                                     <span className=' '>{tab.icon}</span>
-                                    <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
+                                    <span className='font-bold text-black-1group-hover:text-white'>{tab.label}</span>
                                 </div>
                                 <div>
                                     <ul className='flex flex-col gap-y-4 justify-center items-start'>
@@ -106,7 +106,7 @@ const NavSolutions = () => {
                                 >
                                     <div className='w-full flex justify-start  gap-x-2  text-gray-400  hover:text-[#409eef] group'>
                                         <span className=' '>{tab.icon}</span>
-                                        <span className='font-bold text-black group-hover:text-[#409eef]'>{tab.label}</span>
+                                        <span className='font-bold text-black-1group-hover:text-[#409eef]'>{tab.label}</span>
                                     </div>
 
                                     <div className='cursor-pointer'>

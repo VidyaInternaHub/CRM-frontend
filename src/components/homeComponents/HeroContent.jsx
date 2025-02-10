@@ -5,7 +5,7 @@ import salesImage from '../../assets/images/sales image crm.webp';
 import marketingImage from '../../assets/images/marketing image crm.webp';
 import hrImage from '../../assets/images/HR image crm.webp';
 import customerServiceImage from '../../assets/images/customer service img cmr.webp';
-import ProgressBar from '../ProgressBar';
+import ProgressBar from '../common/ProgressBar';
 
 const HeroContent = () => {
     const [activeTab, setActiveTab] = useState(1);
@@ -16,8 +16,8 @@ const HeroContent = () => {
             label: "Project Management",
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 28 28" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8913 19.7759V16.6509H19.776V8.23726H8.23734V16.6509H11.122V19.7759H16.8913ZM7.27467 5.83337H20.7257C21.5216 5.83337 22.1668 6.47861 22.1668 7.27455V20.7255C22.1668 21.5215 21.5216 22.1667 20.7257 22.1667H7.27467C6.47873 22.1667 5.8335 21.5215 5.8335 20.7255V7.27455C5.8335 6.47861 6.47873 5.83337 7.27467 5.83337ZM11.7536 12.0476L13.0997 13.4419L16.4652 10.0284L17.4267 11.4707L13.0997 15.7977L10.6958 13.3938L11.7536 12.0476Z" fill="currentColor"></path>
-            </svg>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8913 19.7759V16.6509H19.776V8.23726H8.23734V16.6509H11.122V19.7759H16.8913ZM7.27467 5.83337H20.7257C21.5216 5.83337 22.1668 6.47861 22.1668 7.27455V20.7255C22.1668 21.5215 21.5216 22.1667 20.7257 22.1667H7.27467C6.47873 22.1667 5.8335 21.5215 5.8335 20.7255V7.27455C5.8335 6.47861 6.47873 5.83337 7.27467 5.83337ZM11.7536 12.0476L13.0997 13.4419L16.4652 10.0284L17.4267 11.4707L13.0997 15.7977L10.6958 13.3938L11.7536 12.0476Z" fill="currentColor"></path>
+                </svg>
             ),
             content: {
                 title: "Get work done easier and faster with a full set of task and project management tools.",
@@ -262,7 +262,7 @@ const HeroContent = () => {
         const interval = setInterval(() => {
             setProgress(0);
             setActiveTab((prev) => (prev % tabs.length) + 1);
-            
+
         }, 5000);
 
         const progressInterval = setInterval(() => {
@@ -273,13 +273,13 @@ const HeroContent = () => {
             clearInterval(interval);
             clearInterval(progressInterval);
         };
-    }, [tabs.length,progress]);
+    }, [tabs.length, progress]);
 
     const handleTabClick = (id) => {
         setActiveTab(id);
         setProgress(0);
         clearInterval();
-        
+
     };
     const handlePreviousTab = () => {
         setActiveTab((prev) => (prev === 1 ? tabs.length : prev - 1));
@@ -302,33 +302,31 @@ const HeroContent = () => {
                     {tabs.map((tab) => (
                         <li
                             key={tab.id}
-                            className={`relative flex flex-col items-center gap-2 cursor-pointer ${activeTab === tab.id ? 'text-[#409eef]' : 'text-black'}`}
+                            className={`relative flex flex-col items-center gap-2 cursor-pointer ${activeTab === tab.id ? 'text-[#409eef]' : 'text-black-1'}`}
                             onClick={() => handleTabClick(tab.id)}
-                        >  
-                        
-                            <button className={`${activeTab === tab.id ? 'bg-[#409eef] text-[white]' : 'bg-blue-100 text-[#409EEF]'} p-1 `}>
+                        >
+                            <button className={`${activeTab === tab.id ? 'bg-[#409eef] text-[white]' : 'bg-blue-50 text-[#409EEF]'} p-1 `}>
                                 {tab.icon}
-                                
                             </button>
                             <span className={`text-xl  hover:text-[#409eef] ${activeTab === tab.id ? 'text-[#409eef]' : ''}`}>
                                 {tab.label}
                             </span>
-                            
-                               <div className='absolute bottom-0 left-0 w-full h-1 bg-blue-blue bg-opacity-40'>
-                                { activeTab === tab.id && <ProgressBar progress={progress} />}
-                               </div>
-                            
+
+                            <div className='absolute bottom-0 left-0 w-full h-1 bg-blue-blue-main bg-opacity-40'>
+                                {activeTab === tab.id && <ProgressBar progress={progress} />}
+                            </div>
+
                         </li>
 
                     ))}
-                    <li className='flex flex-col items-center cursor-pointer text-black'>
+                    <li className='flex flex-col items-center cursor-pointer text-black-1'>
                         <a href="#" className='flex flex-col items-center'>
                             <span >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 28 28" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.8063 17.5909C12.1509 18.1556 9.84412 15.8482 10.409 13.1933C10.6761 11.9379 11.9376 10.6763 13.193 10.4092C15.8479 9.84407 18.1556 12.151 17.5907 14.8066C17.2944 16.1994 16.1991 17.2947 14.8063 17.5909ZM20.8011 12.3323C20.6697 11.7952 20.4795 11.2813 20.2327 10.8009C20.2223 10.7806 20.2247 10.7563 20.239 10.7386L21.3992 9.29997C21.651 8.98976 21.6396 8.54345 21.3741 8.24408L20.6387 7.41639C20.3721 7.11732 19.9301 7.05408 19.5929 7.26711L18.0116 8.2612C17.326 7.78223 16.5508 7.42671 15.7149 7.21724C15.6927 7.21167 15.6759 7.19357 15.6721 7.171L15.3689 5.34909C15.304 4.95545 14.9634 4.66663 14.5635 4.66663H13.4553C13.0562 4.66663 12.7144 4.95545 12.6509 5.34909L12.3461 7.17168C12.3423 7.1942 12.3255 7.21224 12.3034 7.21778C11.6269 7.38732 10.9915 7.65491 10.4094 8.00475C10.3898 8.01654 10.3651 8.01567 10.3465 8.00236L8.87329 6.95095C8.54919 6.71939 8.104 6.7556 7.82116 7.03786L7.03821 7.82138C6.75596 8.10423 6.71974 8.54943 6.95193 8.87354L8.0058 10.3497C8.01908 10.3683 8.02 10.393 8.00824 10.4126C7.6618 10.9902 7.397 11.6218 7.22763 12.2921C7.22203 12.3143 7.204 12.331 7.18151 12.3348L5.34893 12.6408C4.9559 12.7057 4.6665 13.0464 4.6665 13.4463V14.5537C4.6665 14.9535 4.9559 15.2942 5.34893 15.3591L7.18145 15.6651C7.20397 15.6689 7.22203 15.6857 7.2276 15.7078C7.36538 16.2551 7.56163 16.7786 7.81962 17.266C7.83036 17.2863 7.82809 17.311 7.81364 17.3289L6.65909 18.7588C6.4082 19.0688 6.41873 19.5154 6.68417 19.8145L7.41901 20.6422C7.6856 20.9418 8.12791 21.0039 8.46514 20.7914L10.0375 19.8036C10.0568 19.7915 10.0814 19.792 10.1002 19.8048C10.7713 20.2583 11.5284 20.5923 12.3399 20.7914L12.651 22.6508C12.7144 23.0444 13.0562 23.3333 13.4553 23.3333H14.5635C14.9634 23.3333 15.304 23.0445 15.3689 22.6508L15.6726 20.8285C15.6764 20.806 15.6932 20.7879 15.7154 20.7824C16.3831 20.6152 17.0103 20.3523 17.5869 20.0086C17.6065 19.997 17.631 19.9979 17.6496 20.0111L19.1856 21.1082C19.5091 21.3406 19.9546 21.3041 20.2372 21.021L21.0205 20.2377C21.3024 19.9557 21.3405 19.5108 21.1064 19.1861L20.013 17.653C19.9997 17.6343 19.9988 17.6097 20.0106 17.5901C20.358 17.0106 20.6242 16.3778 20.7927 15.7044C20.7982 15.6822 20.8163 15.6654 20.8388 15.6616L22.6507 15.3591C23.0449 15.2942 23.3332 14.9535 23.3332 14.5536V13.4462C23.3326 13.0464 23.0444 12.7057 22.6501 12.6408L20.8011 12.3323Z" fill="#409EEF"></path>
                                 </svg>
                             </span>
-                            <span className="ml-2 text-black hover:text-[#409eef] text-xl">
+                            <span className="ml-2 text-black-1hover:text-[#409eef] text-xl ">
                                 See all solution
                             </span>
                         </a>
@@ -348,7 +346,7 @@ const HeroContent = () => {
                         ))}
 
                     </ul>
-                    <a href="#" className="my-4 bg-[#bdf300] text-black py-2 px-4 rounded-full text-center sm:text-xl text-lg">
+                    <a href="#" className="my-4 bg-green-button hover:opacity-90 text-black font-semibold p-4 rounded-full text-center sm:text-xl text-lg">
                         TRY THIS SOLUTION
                     </a>
                 </div>
