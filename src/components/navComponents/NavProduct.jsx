@@ -472,7 +472,7 @@ const NavProduct = () => {
                 key={tab.id}
                 className={
                   activeTab === tab.id
-                    ? "bg-blue text-white"
+                    ? "bg-blue-main text-white"
                     : "bg-navDropDownMenu"
                 }
               >
@@ -486,26 +486,26 @@ const NavProduct = () => {
                   </span>
                   <span className="uppercase">{tab.label}</span>
                 </div>
-                <MdOutlineKeyboardArrowRight className={`text-3xl font-normal ${tab.id===activeTab ? "text-white" :"text-gray-2" }`} />
+                <MdOutlineKeyboardArrowRight className={`text-font-3xl font-normal ${tab.id===activeTab ? "text-white" :"text-gray-2" }`} />
               </ProductMenu>
             </a>
           ))}
-          <div className=" text-base font-semibold flex justify-end gap-1 items-center mt-2.5">
-            <div className="hover:text-blue w-fit flex cursor-pointer items-center">
+          <div className=" text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5">
+            <div className="hover:text-blue-main w-fit flex cursor-pointer items-center">
               <span>See all tools</span>
-              <MdOutlineKeyboardArrowRight className="text-blue text-3xl font-light" />
+              <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
             </div>
           </div>
         </div>
 
         {/* ------menu content------- */}
-        <div className="max-w-[56.625rem] border-l-4 border-opacity-40 border-gray bg-white pl-8 pr-5 ">
+        <div className="max-w-[56.625rem] border-l-4 border-opacity-40 border-gray-1 bg-white pl-8 pr-5 ">
           {/* --------menu content title-------- */}
           <div className="container xl:pb-8 pb-5">
             <div
               className="w-fit bg-white cursor-pointer group"
             >
-              <div className="text-2xl font-bold flex gap-3 items-center mb-1">
+              <div className="text-font-2xl font-bold flex gap-3 items-center mb-1">
                 <span className={`icon ${tabs[activeTab].iconColor}`}>{tabs[activeTab].icon}</span>
                 <span className={`capitalize group-hover:text-blue`}>
                   {tabs[activeTab].label}
@@ -524,18 +524,18 @@ const NavProduct = () => {
                     key={item.id}
                     className=" pt-1.5 pb-3 pr-6 xl:pb-4 group cursor-pointer"
                   >
-                    <div className="text-base font-semibold mb-1 group-hover:text-blue">
+                    <div className="text-font-base font-semibold mb-1 group-hover:text-blue">
                       {item.title}
                     </div>
-                    <div className="text-sm leading-4">{item.description}</div>
+                    <div className="text-font-sm leading-4">{item.description}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className=" text-base font-semibold flex justify-end gap-1 items-center mt-2.5 ">
-              <div className="hover:text-blue w-fit flex cursor-pointer items-center ">
+            <div className=" text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5 ">
+              <div className="hover:text-blue-main w-fit flex cursor-pointer items-center ">
                 <span>See all {tabs[activeTab].label} features</span>
-                <MdOutlineKeyboardArrowRight className="text-blue text-3xl font-light" />
+                <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ export default function Dropdown({ children, trigger }) {
     >
       <div>{trigger}</div>
       {show && (
-        <ul className="absolute rounded-b-lg top-20 left-0 w-full bg-blue shadow-xl overflow-hidden">
+        <ul className="absolute rounded-b-lg top-20 left-0 w-full bg-blue-main shadow-xl overflow-hidden">
           {children}
         </ul>
       )}

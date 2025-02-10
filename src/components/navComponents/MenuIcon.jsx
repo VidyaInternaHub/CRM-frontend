@@ -13,17 +13,17 @@ const MenuIcon = ({isOpen, setOpen}) => {
         onClick={toggleMenu}
       >
         <span
-          className={`block absolute h-1 w-full bg-blue-2 transform transition duration-300 ease-in-out ${
+          className={`block absolute h-1 w-full bg-blue-dark transform transition duration-300 ease-in-out ${
             isOpen ? 'rotate-45 top-1/2' : 'top-0'
           }`}
         ></span>
         <span
-          className={`block absolute h-[0.2rem] w-full bg-blue-2 transform transition duration-300 ease-in-out ${
+          className={`block absolute h-[0.2rem] w-full bg-blue-dark transform transition duration-300 ease-in-out ${
             isOpen ? 'opacity-0' : 'top-[43%]'
           }`}
         ></span>
         <span
-          className={`block absolute h-1 w-full bg-blue-2 transform transition duration-300 ease-in-out ${
+          className={`block absolute h-1 w-full bg-blue-dark transform transition duration-300 ease-in-out ${
             isOpen ? '-rotate-45 top-1/2' : 'bottom-0'
           }`}
         ></span>

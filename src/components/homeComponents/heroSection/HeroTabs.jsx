@@ -189,12 +189,12 @@ const HeroTabs = () => {
   return (
     <div className="relative h-[47rem] md:h-[35rem] lg:h-[36rem] w-full mx-auto lg:w-full my-5 font-semibold flex flex-col items-center">
       {/* ----------tabs for desktop view--------- */}
-      <div className="relative hidden w-full justify-between text-blue lg:flex lg:order-1 gap-5 ">
+      <div className="relative hidden w-full justify-between text-blue-main lg:flex lg:order-1 gap-5 ">
         {tabs.map((tab) => (
           <div
             key={tab.id}
             className={`pb-3 ${
-              activeTab === tab.id && "relative cursor-pointer text-blue-2 pb-3"
+              activeTab === tab.id && "relative cursor-pointer text-blue-dark pb-3"
             }`}
             onMouseEnter={() => {
               setActiveTab(tab.id);
@@ -208,15 +208,15 @@ const HeroTabs = () => {
             }}
             onClick={() => setActiveTab(tab.id)}
           >
-            <span className="text-xl">{tab.label}</span>
+            <span className="text-font-xl">{tab.label}</span>
             {activeTab === tab.id && (
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-blue bg-opacity-40">
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-main bg-opacity-40">
                 <ProgressBar progress={progress} />
               </div>
             )}
           </div>
         ))}
-        <div className="absolute bottom-0 w-full h-[3px] bg-blue bg-opacity-20"></div>
+        <div className="absolute bottom-0 w-full h-[3px] bg-blue-main bg-opacity-20"></div>
       </div>
       {/* ----------tabs for mobile and tablet view--------- */}
       <div className="w-full order-2 ">
@@ -228,7 +228,7 @@ const HeroTabs = () => {
                 activeTab === tab.id ? " opacity-100" : " opacity-0"
               } `}
             >
-              <div className="lg:hidden w-full text-2xl text-blue-2 flex justify-between items-center mb-3 ">
+              <div className="lg:hidden w-full text-font-2xl text-blue-dark flex justify-between items-center mb-3 ">
                 <MdKeyboardArrowLeft
                   className="hover:cursor-pointer opacity-40"
                   onClick={() => {
@@ -248,7 +248,7 @@ const HeroTabs = () => {
                 />
               </div>
               <div className="w-full order-3 flex flex-col items-center md:items-start text-black-2">
-                <ul className="marker:text-blue list-disc list-outside w-fit text-left text-[1rem] lg:text-xl ml-10 md:mt-10">
+                <ul className="marker:text-blue-main list-disc list-outside w-fit text-left text-[1rem] lg:text-font-xl ml-10 md:mt-10">
                   {tab.services.map((item, index) => (
                     <li key={index} className="mb-2">
                       {item}
@@ -283,7 +283,7 @@ const HeroTabs = () => {
           </div>
         ))}
       </div>
-      <button className="absolute bottom-0 order-4 w-96 flex justify-center md:self-start md:w-fit rounded-full px-10 py-4 text-xl font-semibold bg-light-green mb-10">
+      <button className="absolute bottom-0 order-4 w-96 flex justify-center md:self-start md:w-fit rounded-full px-10 py-4 text-font-xl font-semibold bg-green-button mb-10">
         START FOR FREE
       </button>
     </div>

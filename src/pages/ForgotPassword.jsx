@@ -42,9 +42,9 @@ const ForgotPassword = () => {
                 <div className='w-full  m-auto  flex justify-center '>
                     <div className={`text-md lg:w-1/3 md:w-[40%] sm:w-full bg-opacity-55 mr-6  text-white bg-[#e2e8f0] border-white py-3 px-4 rounded `}>
                         <select className='bg-transparent focus:ring-0 focus:outline-none  w-full bg-opacity-55 mr-6  bg-[#e2e8f0]'>
-                            <option value="en" className='text-black'>English</option>
-                            <option value="es" className='text-black'>Español</option>
-                            <option value="fr" className='text-black'>Français</option>
+                            <option value="en" className='text-black-1'>English</option>
+                            <option value="es" className='text-black-1'>Español</option>
+                            <option value="fr" className='text-black-1'>Français</option>
                         </select>
                     </div>
                 </div>

@@ -22,14 +22,14 @@ const NavButtonsData = [
 const SearchBox = () => {
   return (
     <>
-      <div className="w-full flex justify-between bg-gray bg-opacity-30 py-2 rounded-full px-5">
+      <div className="w-full flex justify-between bg-gray-1 bg-opacity-30 py-2 rounded-full px-5">
         <input
           type="text"
           placeholder="Search"
           className="bg-transparent w-full"
         />
         <button>
-          <IoSearch className="text-gray-2 text-2xl" />
+          <IoSearch className="text-gray-2 text-font-2xl" />
         </button>
       </div>
     </>
@@ -40,7 +40,7 @@ const NavButtons = ({ data, active, setActive, className }) => {
   return (
     <>
       <div
-        className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold  items-center text-black lg:text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-sm`}
+        className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold  items-center text-black-1lg:text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-font-sm`}
       >
         {data.map((btn, index) => (
           <div
@@ -98,15 +98,15 @@ const Navbar = () => {
               setActive={setActive}
             />
           </div>
-          <div className="flex justify-end gap-2 items-center font-semibold text-sm">
+          <div className="flex justify-end gap-2 items-center font-semibold text-font-sm">
             <button>
-              <IoSearch className="hidden lg:flex text-gray-2 text-2xl" />
+              <IoSearch className="hidden lg:flex text-gray-2 text-font-2xl" />
             </button>
-            <button className="rounded-full py-1.5 px-4 lg:rounded-xl  lg:py-3 lg:px-2  bg-light-green ">
+            <button className="rounded-full py-1.5 px-4 lg:rounded-xl  lg:py-3 lg:px-2  bg-green-button ">
               START FOR FREE
             </button>
-            <button className="hidden lg:flex gap-1 border-2 border-blue rounded-lg px-2 py-2.5 text-blue">
-              <ImUser className="text-base" />
+            <button className="hidden lg:flex gap-1 border-2 border-blue-main rounded-lg px-2 py-2.5 text-blue">
+              <ImUser className="text-font-base" />
               <p>LOG IN</p>
             </button>
             <button className="hidden lg:flex items-center gap-1 font-light ">
@@ -121,9 +121,9 @@ const Navbar = () => {
       {isOpen ? (
         <div className="absolute top-20 lg:hidden z-10 w-full bg-blue-gray-50">
           <div
-            className={`w-full left-0 px-5 py-2 bg-white z-auto" justify-between font-semibold items-center text-black lg:hidden`}
+            className={`w-full left-0 px-5 py-2 bg-white z-auto" justify-between font-semibold items-center text-black-1lg:hidden`}
           >
-            <div className="my-5 text-sm">
+            <div className="my-5 text-font-sm">
               <SearchBox />
             </div>
             <NavButtons
@@ -132,15 +132,15 @@ const Navbar = () => {
               setActive={setActive}
             />
           </div>
-          <div className="flex flex-col gap-2 items-center px-2 py-5 text-base font-semibold">
-            <button className="rounded-xl w-full h-11 min-w-32 max-w-72 bg-light-green ">
+          <div className="flex flex-col gap-2 items-center px-2 py-5 text-font-base font-semibold">
+            <button className="rounded-xl w-full h-11 min-w-32 max-w-72 bg-green-button ">
               START FOR FREE
             </button>
-            <button className="flex items-center gap-2 justify-center rounded-xl w-full h-11 min-w-32 max-w-72 border-2 border-blue text-blue">
-              <ImUser className="text-base" />
+            <button className="flex items-center gap-2 justify-center rounded-xl w-full h-11 min-w-32 max-w-72 border-2 border-blue-main text-blue">
+              <ImUser className="text-font-base" />
               <p>LOG IN</p>
             </button>
-            <button className="flex items-center gap-2 justify-center rounded-xl w-full h-11 min-w-32 max-w-72 border-2 border-blue text-blue">
+            <button className="flex items-center gap-2 justify-center rounded-xl w-full h-11 min-w-32 max-w-72 border-2 border-blue-main text-blue">
               {" "}
               <FaGlobeAmericas />
               <p className="text-black">EN</p>{" "}
