@@ -1,12 +1,17 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navComponents/Navbar";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <div className="App font-bs-font w-screen flex flex-col items-center">
-      <Navbar />
-      <HeroSection />
+    <div className="App font-bs-font w-screen mx-auto">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
