@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { FaArrowLeft } from "react-icons/fa6";
 
 const ForgotPassword = () => {
-    const [message, setMessage] = useState('Message will be shown here')
+    const [message,setMessage]=useState('Message will be shown here')
     return (
-        <section className='bg-gradient-to-b from-[#5ce5fb] to-[#2fc6f6] overflow-hidden w-full h-screen  flex flex-row items-center justify-center mt-20'>
+        <section className='bg-gradient-to-b from-[#5ce5fb] to-[#2fc6f6] h-screen flex flex-row items-center justify-center overflow-x-hidden'>
             {/* Left Section */}
-            <div className=' md:w-[40%] w-[30%] h-screen sm:flex flex-col justify-between p-6 hidden'>
+            <div className=' md:w-[40%] w-[30%] h-screen sm:flex flex-col justify-between p-8 hidden'>
                 {/* Logo and Back Link */}
-                <div className='w-full flex justify-center  md:flex-row flex-col gap-4 items-center h-1/3'>
+                <div className='w-full flex justify-center md:flex-row flex-col gap-4 items-center h-1/3'>
                     <div className='md:w-1/2 w-full'>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273 53" fill="none" className='w-full'>
                             <path fillRule="evenodd" clipRule="evenodd" d="M37.689 51.822h9.422V17.667H37.69v34.155zM36.51 8.766c0-2.884 2.276-5.233 5.333-5.233 2.991 0 5.267 2.215 5.267 5.233 0 2.953-2.276 5.367-5.267 5.367-3.057 0-5.333-2.347-5.333-5.367zM55.446 43.844V26.978h-5.98v-7.23h5.98v-7.641l9.347-2.685V19.75h9.829l-2.13 7.229h-7.699v14.525c0 3.03.962 4.062 3.093 4.062 1.787 0 3.574-.62 4.811-1.446l2.68 6.334C72.973 52.105 68.712 53 65.482 53c-6.186 0-10.035-3.442-10.035-9.156M77.733 18.512h8.545l1.124 3.521c2.998-2.606 5.846-4.366 9.668-4.366 1.724 0 3.823.493 5.397 1.55l-3.523 7.887c-1.798-1.057-3.523-1.268-4.497-1.268-2.174 0-3.897.704-6.595 2.747v23.24H77.733V18.511zM103.644 51.822h9.423V17.667h-9.423v34.155zm0-43.056c0-2.884 2.277-5.233 5.333-5.233 2.991 0 5.267 2.215 5.267 5.233 0 2.953-2.276 5.367-5.267 5.367-3.056 0-5.333-2.347-5.333-5.367zM128.026 34.636l-12.25-16.97h9.914l7.505 10.4 7.506-10.4h9.913l-12.392 16.97 12.534 17.186h-9.913l-7.719-10.687-7.789 10.687h-9.913l12.604-17.186z" fill="#fff" />
@@ -29,22 +29,22 @@ const ForgotPassword = () => {
 
                 {/* Text Section */}
                 <div className='text-white flex flex-col items-center gap-4 h-1/3'>
-                    <h1 className='w-full md:w-1/2  md:text-3xl text-2xl font-bold text-center'>Your Company. United</h1>
+                    <h1 className='w-full md:w-1/2 lg:text-4xl md:text-3xl text-2xl font-bold text-center'>Your Company. United</h1>
                     <div className='flex justify-center md:flex-row flex-col gap-2 lg:text-2xl text-xl'>
                         <p>Free.</p>
                         <p>Unlimited.</p>
                         <p>Online.</p>
                     </div>
                 </div>
-                <hr className='bg-white w-full h-[1px] mt-12 border-none' />
+                <hr className='bg-white w-full h-[1px] mt-12' />
 
                 {/* Language Selector */}
-                <div className='w-full  m-auto  flex justify-center '>
-                    <div className={`text-md lg:w-1/3 md:w-[40%] sm:w-full bg-opacity-55 mr-6  text-white bg-[#e2e8f0] border-white py-3 px-4 rounded `}>
-                        <select className='bg-transparent focus:ring-0 focus:outline-none  w-full bg-opacity-55 mr-6  bg-[#e2e8f0]'>
-                            <option value="en" className='text-black-1'>English</option>
-                            <option value="es" className='text-black-1'>Español</option>
-                            <option value="fr" className='text-black-1'>Français</option>
+                <div className='w-full  flex justify-end '>
+                    <div className={`text-md lg:w-1/3 md:w-[40%] sm:w-full bg-opacity-55   text-white bg-gray-200 border-white py-3 px-4 rounded  bg-[data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Cpath%20opacity%3D%22.7%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M1.414%204.242L0%205.656%204.243%209.9l1.414%201.414L7.07%209.9l4.243-4.243-1.415-1.414-4.242%204.243-4.243-4.243z%22%20fill%3D%22white%22/%3E%0A%3C/svg%3E%0A]`}>
+                        <select className='bg-transparent focus:ring-0 focus:outline-none  w-full'>
+                            <option value="en" className='text-black'>English</option>
+                            <option value="es" className='text-black'>Español</option>
+                            <option value="fr" className='text-black'>Français</option>
                         </select>
                     </div>
                 </div>
@@ -63,30 +63,28 @@ const ForgotPassword = () => {
                     </div>
 
                     {/* form section */}
-                    <form className='w-full flex flex-col items-center gap-4 '>
+                    <form className='w-full flex flex-col items-center gap-4'>
                         <div className='w-full mb-4 sm:px-6 px-2'>
                             <label htmlFor="forgotpassword" className='block text-lg lg:w-[75%] m-auto font-medium text-gray-700'>Enter phone number or email</label>
                             <div className='flex mt-1 w-full lg:w-[75%] m-auto sm:px-3 px-2 py-3 border border-gray-300 rounded-md shadow-sm focus-within:ring-2 focus-within:ring-blue-500'>
-                            <div className='sm:w-[20%] w-[30%] flex justify-center items-center'>
-                                    
-                                    <select id="countrycode" className='p-2 focus:ring-0 focus:outline-none'>
+                                <input type="text" className='sm:w-[80%] w-[70%] focus:ring-0 focus:outline-none text-xl' />
+
+                                <div className='sm:w-[20%] w-[30%] flex justify-center items-center'>
+                                    <hr className='w-[2px] h-full bg-gray-500' />
+                                    <select id="countrycode" className='p-2'>
                                         <option value="india">+91</option>
                                         <option value="usa">+1</option>
                                         <option value="uk">+44</option>
                                         <option value="aus">+61</option>
-
-                                        <hr className='w-[2px] h-full bg-gray-500' />
                                     </select>
                                 </div>
-                                <input type="text" className='sm:w-[80%] w-[70%] focus:ring-0 focus:outline-none text-xl' />
-
                             </div>
 
                         </div>
 
                         {/* message section */}
                         <div >
-                            {message}
+                           {message}
                         </div>
 
                         {/* submit section */}

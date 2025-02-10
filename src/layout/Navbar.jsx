@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import logo from "../../assets/bitrix24-seeklogo.svg";
+import logo from "../assets/bitrix24-seeklogo.svg";
 import { ImUser } from "react-icons/im";
 import { FaGlobeAmericas } from "react-icons/fa";
-import DropdownContainer from "./DropdownContainer";
-import MenuIcon from "./MenuIcon";
-import NavButton from "./NavButton";
-import useClickOutside from "../../hooks/useClickOutSide";
-import NavProduct from "./NavProduct";
-import NavSolutions from "./NavSolutions";
+import DropdownContainer from "../components/navComponents/DropdownContainer";
+import MenuIcon from "../components/navComponents/MenuIcon";
+import NavButton from "../components/navComponents/NavButton";
+import useClickOutside from "../hooks/useClickOutSide";
+import NavProduct from "../components/navComponents/NavProduct";
+import NavSolutions from "../components/navComponents/NavSolutions";
 
 const NavButtonsData = [
   { id: 1, name: "Product", dropdown: <NavProduct /> },
@@ -23,7 +23,7 @@ const NavButtonsData = [
 const SearchBox = () => {
   return (
     <>
-      <div className="w-full flex justify-between bg-gray-1 bg-opacity-30 py-2 rounded-full px-5">
+      <div className="w-full flex justify-between bg-gray-1 bg-opacity-30 py-2 rounded-full px-5 overflow-x-hidden">
         <input
           type="text"
           placeholder="Search"
