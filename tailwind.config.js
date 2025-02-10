@@ -12,6 +12,7 @@ module.exports = {
       "gray-2": "#bbbbbb",
       "black-2": "#262626",
       black: "#121212",
+      mainBlue:'#409eef'
     },
 
     fontSize: {
