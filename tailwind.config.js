@@ -15,6 +15,7 @@ module.exports = withMT({
       "auth-bg":"#5ce5fb",
       "auth-yellow-bg":"rgba(189,240,11,.24)",
       "auth-button":"#afe016",
+      "slate-2":"#f1f5f9",
       "green-button": "#bdf300",
       "gray-1": "#e1e1e1",
       "gray-2": "#bbbbbb",
