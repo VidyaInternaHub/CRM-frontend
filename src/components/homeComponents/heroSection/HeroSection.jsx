@@ -4,7 +4,7 @@ import { CiCloudOn } from "react-icons/ci";
 
 const HeroSection = () => {
   return (
-    <div className=" flex flex-col w-full bg-hero-image bg-center bg-no-repeat">
+    <div className="mt-20 flex flex-col w-full bg-hero-image bg-center bg-no-repeat">
       <div className="w-full max-w-[1388px] flex justify-center self-center px-5">
         <div className="flex mt-10 flex-col w-[997px]">
           <h1 className=" text-font-2xl md:text-font-4xl font-bold">

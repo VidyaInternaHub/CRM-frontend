@@ -41,19 +41,45 @@ const NavButtons = ({ data, active, setActive, className }) => {
   return (
     <>
       <div
-        className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold  items-center text-black-1lg:text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-font-sm`}
+        className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold items-center text-black-1lg:text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-font-sm`}
       >
         {data.map((btn, index) => (
-          <div
-            key={index}
-            onClick={() => {
-              btn.id === 2 || active === btn.id
-                ? setActive(0)
-                : setActive(btn.id);
-            }}
-          >
-            <NavButton name={btn.name} isOpen={active === btn.id} />
-          </div>
+          <>
+            {/* -----------for large screen--------- */}
+            <div
+              key={index}
+              onClick={() => {
+                btn.id === 2 || active === btn.id
+                  ? setActive(0)
+                  : setActive(btn.id);
+              }}
+              className="hidden lg:block"
+            >
+              <div className="block w-full">
+                <NavButton
+                  name={btn.name}
+                  isOpen={active === btn.id}
+                  dropdownContent={btn.dropdown}
+                />
+              </div>
+            </div>
+            {/* --------for small screen-------- */}
+            <div
+              key={index}
+              onClick={() => {
+                setActive(btn.id);
+              }}
+              className="block lg:hidden"
+            >
+              <div className="block w-full">
+                <NavButton
+                  name={btn.name}
+                  isOpen={active === btn.id}
+                  dropdownContent={btn.dropdown}
+                />
+              </div>
+            </div>
+          </>
         ))}
       </div>
     </>
@@ -64,7 +90,7 @@ const Navbar = () => {
   const [active, setActive] = useState(0);
   const [isOpen, setOpen] = useState(false);
 
-  const navRef = useClickOutside(() => setActive(0));
+  // const navRef = useClickOutside(() => setActive(0));
 
   useEffect(() => {
     const handleResize = () => {
@@ -82,8 +108,8 @@ const Navbar = () => {
   return (
     <>
       <nav
-        ref={navRef}
-        className="border-box sticky bg-white top-0 w-full shadow-md flex justify-center z-50"
+        // ref={navRef}
+        className="border-box fixed bg-white top-0 w-full shadow-md flex justify-center z-50"
       >
         <header className="lg:max-w-nav w-full flex justify-between p-1 h-20 items-center px-5">
           <div className="flex items-center justify-start gap-2">
@@ -120,7 +146,7 @@ const Navbar = () => {
       </nav>
       {/* -----Nav menus for small screen---- */}
       {isOpen ? (
-        <div className="absolute top-20 lg:hidden z-10 w-full bg-blue-gray-50">
+        <div className="fixed top-20 lg:hidden z-10 w-full bg-blue-gray-50 min-h-auto max-h-screen overflow-y-scroll">
           <div
             className={`w-full left-0 px-5 py-2 bg-white z-auto" justify-between font-semibold items-center text-black-1lg:hidden`}
           >
