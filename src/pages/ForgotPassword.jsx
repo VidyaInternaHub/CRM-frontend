@@ -29,8 +29,8 @@ const ForgotPassword = () => {
 
                 {/* Text Section */}
                 <div className='text-white flex flex-col items-center gap-4 h-1/3'>
-                    <h1 className='w-full md:w-1/2 lg:text-4xl md:text-3xl text-2xl font-bold text-center'>Your Company. United</h1>
-                    <div className='flex justify-center md:flex-row flex-col gap-2 lg:text-2xl text-xl'>
+                    <h1 className='w-full md:w-1/2  md:text-font-3xl text-font-2xl font-bold text-center'>Your Company. United</h1>
+                    <div className='flex justify-center items-start md:flex-row flex-col gap-2 lg:text-font-2xl text-font-xl'>
                         <p>Free.</p>
                         <p>Unlimited.</p>
                         <p>Online.</p>
@@ -40,7 +40,7 @@ const ForgotPassword = () => {
 
                 {/* Language Selector */}
                 <div className='w-full  flex justify-end '>
-                    <div className={`text-md lg:w-1/3 md:w-[40%] sm:w-full bg-opacity-55   text-white bg-gray-100 border-white py-3 px-4 rounded  bg-[data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Cpath%20opacity%3D%22.7%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M1.414%204.242L0%205.656%204.243%209.9l1.414%201.414L7.07%209.9l4.243-4.243-1.415-1.414-4.242%204.243-4.243-4.243z%22%20fill%3D%22white%22/%3E%0A%3C/svg%3E%0A]`}>
+                    <div className={`text-md lg:w-1/3 md:w-[40%] sm:w-full bg-opacity-55  text-white bg-gray-100 border-white py-3 px-4 rounded  bg-[data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%3Cpath%20opacity%3D%22.7%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M1.414%204.242L0%205.656%204.243%209.9l1.414%201.414L7.07%209.9l4.243-4.243-1.415-1.414-4.242%204.243-4.243-4.243z%22%20fill%3D%22white%22/%3E%0A%3C/svg%3E%0A]`}>
                         <select className='bg-transparent focus:ring-0 focus:outline-none  w-full'>
                             <option value="en" className='text-black'>English</option>
                             <option value="es" className='text-black'>Español</option>
@@ -55,7 +55,7 @@ const ForgotPassword = () => {
                 {/* main content section */}
                 <div className='w-full flex flex-col items-center gap-10'>
                     <div className='w-full flex flex-col items-center gap-4'>
-                        <h2 className='text-2xl font-bold mb-4'>Bitrix24 sign in</h2>
+                        <h2 className='text-font-3xl font-bold mb-4'>Bitrix24 sign in</h2>
                         <hr className='bg-gray-400 w-full h-[1px]' />
                     </div>
                     <div className='sm:w-[80%] w-[90%] bg-auth-yellow-bg p-4 '>

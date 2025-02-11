@@ -68,7 +68,7 @@ const NavSolutions = () => {
                     {
                         tabs.map((tab) => (
                             <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-sm '>
-                                <div className='w-full flex justify-start gap-x-2 bg-slate-100 text-[#409eef] hover:bg-[#409eef] hover:text-white p-4 px-6 rounded-full group'>
+                                <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-[#409eef] hover:bg-[#409eef] hover:text-white p-6 rounded-full group'>
                                     <span className=' '>{tab.icon}</span>
                                     <span className='font-bold text-black-1group-hover:text-white'>{tab.label}</span>
                                 </div>
