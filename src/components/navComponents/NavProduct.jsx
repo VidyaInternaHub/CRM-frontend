@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProductMenu from "./ProductMenu";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Dropdown from "./Dropdown";
 
 const tabs = [
   {
@@ -458,7 +459,9 @@ const NavProduct = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="container px-2 text-black-2">
+    <>
+    {/* -------------for large screen---------- */}
+    <div className="hidden lg:block container px-2 text-black-2">
       <div className="flex max-w-[1330px]">
         {/* -------menu buttons container------- */}
         <div className="min-w-[22.5rem] mr-3 flex flex-col gap-[0.3rem]">
@@ -542,6 +545,13 @@ const NavProduct = () => {
         </div>
       </div>
     </div>
+
+    {/* ------------for small screen----------- */}
+    <div className="lg:hidden container px-2 text-black-2">
+
+    </div>
+
+    </>
   );
 };
 
