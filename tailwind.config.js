@@ -20,7 +20,7 @@ module.exports = withMT({
       "gray-1": "#e1e1e1",
       "gray-2": "#bbbbbb",
       "black-2": "#262626",
-      black: "#121212",
+      
     },
 
     fontSize: {

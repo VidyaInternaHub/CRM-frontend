@@ -51,8 +51,8 @@ const NavResources = () => {
                 <div className='grid grid-cols-3   xl:w-[90%] w-full m-auto'>
                     {
                         tabs.map((tab) => (
-                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-sm '>
-                                <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-[#409eef] hover:bg-[#409eef] hover:text-white p-6  rounded-full group'>
+                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-font-sm '>
+                                <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-blue-main hover:bg-blue-main hover:text-white p-6  rounded-full group'>
                                     <span className=' '>{tab.icon}</span>
                                     <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
                                 </div>
@@ -60,8 +60,8 @@ const NavResources = () => {
                                     <ul className='flex flex-col gap-y-4 justify-center items-start'>
                                         {tab.content.map((item, index) => (
                                             <div className='flex gap-2 justify-start items-center'>
-                                                {(tab.id === 1 && index != 0 || (tab.id === 2 && index === 0)) && <FaExternalLinkAlt fill='#409eef' />}
-                                                <li key={index} className='hover:text-[#409eef] ml-5 text-lg'><a href="">{item}</a></li>
+                                                {(tab.id === 1 && index != 0 || (tab.id === 2 && index === 0)) && <FaExternalLinkAlt fill='blue-main' />}
+                                                <li key={index} className='hover:text-blue-main ml-5 text-font-sm'><a href="">{item}</a></li>
                                             </div>
                                         ))}
                                     </ul>
@@ -85,14 +85,14 @@ const NavResources = () => {
                                 <div key={tab.id} className={`relative flex justify-between items-center p-2 w-full rounded-full  ${activeTab === tab.id && 'bg-slate-100'} border-gray-100 border-spacing-1`}
                                     onClick={() => handleContent(tab.id)}
                                 >
-                                    <div className='w-full flex justify-start  gap-x-2  text-gray-400  hover:text-[#409eef] group'>
+                                    <div className='w-full flex justify-start  gap-x-2  text-gray-400  hover:text-blue-main group'>
                                         <span className=' '>{tab.icon}</span>
-                                        <span className='font-bold text-black group-hover:text-[#409eef]'>{tab.label}</span>
+                                        <span className='font-bold text-black group-hover:text-blue-main'>{tab.label}</span>
                                     </div>
 
                                     <div className='cursor-pointer'>
                                         {
-                                            openContent && activeTab === tab.id ? <span><FaAngleUp fill='#409eef' /></span> :
+                                            openContent && activeTab === tab.id ? <span><FaAngleUp fill='blue-main' /></span> :
                                                 <span><FaAngleDown /></span>
                                         }
                                     </div>
@@ -102,7 +102,7 @@ const NavResources = () => {
                                         <ul className='flex flex-col gap-y-2 justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
                                                 <div className='flex flex-col gap-1 w-full ml-4'>
-                                                    <li key={index} className='hover:text-[#409eef] ml-5 text-[1rem]'><a href="">{item}</a></li>
+                                                    <li key={index} className='hover:text-blue-main ml-5 text-font-sm'><a href="">{item}</a></li>
                                                     <hr className='h-[1px] bg-gray-300 w-full' />
                                                 </div>
 
