@@ -102,7 +102,7 @@ const NavSolutions = () => {
                             <div className='flex flex-col'
                                 key={tab.id}
                             >
-                                <div key={tab.id} className={`relative flex justify-between items-center py-2 w-full ${activeTab === tab.id && 'bg-slate-2'} `}
+                                <div key={tab.id} className={`relative flex justify-between items-center px-4 py-3 w-full ${activeTab === tab.id && 'bg-slate-2'} `}
                                     onClick={() => handleContent(tab.id)}
                                 >
                                     <div className='w-full flex justify-start  gap-x-2  text-gray-600  hover:text-blue-main group'>
@@ -124,8 +124,8 @@ const NavSolutions = () => {
                                         <ul className='flex flex-col gap-y-2 justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
                                                 <div className='flex flex-col gap-1 w-full ml-4 cursor-pointer'>
-                                                    <li key={index} className='hover:text-blue-main text-font-sm'><a href="_">{item}</a></li>
-                                                    <hr className='h-[1px] bg-gray-300 w-full' />
+                                                    <li key={index} className='hover:text-blue-main text-font-sm ml-4'><a href="_">{item}</a></li>
+                                                    {/* <hr className='h-[1px] bg-gray-300 w-full' /> */}
                                                 </div>
 
                                             ))}

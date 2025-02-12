@@ -13,7 +13,7 @@ import NavResources from "../components/navComponents/NavResources";
 
 const NavButtonsData = [
   { id: 1, name: "Product", dropdown: <NavProduct /> },
-  { id: 2, name: "Pricing" },
+  { id: 2, name: "Pricing" , dropdown: ""},
   { id: 3, name: "Resources", dropdown: <NavResources/> },
   { id: 4, name: "solutions", dropdown: <NavSolutions /> },
   { id: 5, name: "Integrations", dropdown: "" },
@@ -39,6 +39,7 @@ const SearchBox = () => {
 };
 
 const NavButtons = ({ data, active, setActive, className }) => {
+  console.log(active);
   return (
     <>
       <div
@@ -48,7 +49,7 @@ const NavButtons = ({ data, active, setActive, className }) => {
           <>
             {/* -----------for large screen--------- */}
             <div
-              key={index}
+              key={"0"+index}
               onClick={() => {
                 btn.id === 2 || active === btn.id
                   ? setActive(0)
@@ -58,9 +59,9 @@ const NavButtons = ({ data, active, setActive, className }) => {
             >
               <div className="block w-full">
                 <NavButton
-                  name={btn.name}
-                  isOpen={active === btn.id}
-                  dropdownContent={btn.dropdown}
+                  btn={btn}
+                  active={active}
+                  setActive={setActive}
                 />
               </div>
             </div>
@@ -72,11 +73,11 @@ const NavButtons = ({ data, active, setActive, className }) => {
               }}
               className="block lg:hidden"
             >
-              <div className="block w-full">
+              <div className="w-full">
                 <NavButton
-                  name={btn.name}
-                  isOpen={active === btn.id}
-                  dropdownContent={btn.dropdown}
+                  btn={btn}
+                  active={active}
+                  setActive={setActive}
                 />
               </div>
             </div>
@@ -108,16 +109,16 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
+      <header
         // ref={navRef}
         className="border-box fixed bg-white top-0 w-full shadow-md flex justify-center z-50"
       >
-        <header className="lg:max-w-nav w-full flex justify-between p-1 h-20 items-center px-5">
+        <nav className="lg:max-w-nav w-full flex justify-between p-1 h-20 items-center px-5">
           <div className="flex items-center justify-start gap-2">
-            <div className="flex lg:hidden">
+            <div className="flex h-7 lg:hidden overflow-hidden">
               <MenuIcon isOpen={isOpen} setOpen={setOpen} />
             </div>
-            <img src={logo} alt="logo" className="h-5 lg:h-6 xl:h-7" />
+            <img src={logo} alt="logo" className=" overflow-hidden" />
           </div>
           <div className="hidden lg:flex items-center justify-center px-2">
             <NavButtons
@@ -143,11 +144,11 @@ const Navbar = () => {
               <p>EN</p>{" "}
             </button>
           </div>
-        </header>
-      </nav>
+        </nav>
+      </header>
       {/* -----Nav menus for small screen---- */}
       {isOpen ? (
-        <div className="fixed top-20 lg:hidden z-10 w-full bg-blue-gray-50 min-h-auto max-h-screen overflow-y-scroll">
+        <div className="fixed top-20 lg:hidden z-40 w-full bg-blue-gray-50 min-h-auto max-h-screen overflow-y-scroll">
           <div
             className={`w-full left-0 px-5 py-2 bg-white z-auto" justify-between font-semibold items-center text-black-1lg:hidden`}
           >
