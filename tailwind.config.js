@@ -24,7 +24,8 @@ module.exports = withMT({
     },
 
     fontSize: {
-      "font-sm": "0.8rem",
+      "font-2sm": "0.8rem",
+      "font-sm": "0.875rem",
       "font-base": "1rem",
       "font-xl": "1.25rem",
       "font-2xl": "1.563rem",

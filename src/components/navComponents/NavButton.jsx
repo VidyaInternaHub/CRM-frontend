@@ -1,21 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import Dropdown from "./Dropdown";
 
-const NavButton = ({ name, isOpen, dropdownContent }) => {
+const NavButton = ({ btn, active, setActive }) => {
+  const [show, setShow] = useState(active === btn.id);
+
+  const handleActive = () =>{
+    if(show){
+      console.log("active is:" + active)
+      setActive(0);
+      setShow(false)
+    }else{
+      setActive(btn.id);
+      setShow(active === btn.id);
+    }
+  }
+
+  useEffect(() => {
+    setShow(active === btn.id);
+  }, [active]);
+
   return (
     <>
       {/* ----------------for large screen ------------- */}
       <div
         className={`hidden w-full my-auto lg:flex cursor-pointer px-1 py-2 border-2 border-blue-dark border-opacity-0  rounded-xl hover:text-blue-main ${
-          isOpen &&
-          (name.toLowerCase() === "price" ? "border-opacity-100" : "text-blue")
+          show &&
+          (btn.name.toLowerCase() === "price"
+            ? "border-opacity-100"
+            : "text-blue ")
         }`}
       >
-        <div>{name.toUpperCase()}</div>
-        {name.toLowerCase() !== "pricing" &&
-          (isOpen ? (
+        <div>{btn.name.toUpperCase()}</div>
+        {btn.name.toLowerCase() !== "pricing" &&
+          (show ? (
             <MdOutlineKeyboardArrowUp className=" text-blue-main text-font-xl" />
           ) : (
             <MdOutlineKeyboardArrowDown className="text-gray-2 text-font-xl" />
@@ -25,26 +44,30 @@ const NavButton = ({ name, isOpen, dropdownContent }) => {
       {/* ----------------for small screen ------------- */}
 
       <div
-        className={` flex w-full lg:hidden my-2 justify-between cursor-pointer items-center px-5 py-2 border-2 border-gray-1 border-opacity-50 rounded-xl ${
-          isOpen && "text-blue"
+        className={` flex w-full lg:hidden my-2 justify-between items-center border-2 border-gray-1 border-opacity-50 rounded-xl text-black-2 ${
+          show && "text-blue"
         }`}
       >
         <Dropdown
           trigger={
-            <div className="flex justify-between">
-              <div>{name.toUpperCase()}</div>
-              {["pricing", "integrations"].includes(name.toLowerCase()) ? (
-                <MdOutlineKeyboardArrowDown className="text-gray-2 text-font-xl -rotate-90" />
-              ) : isOpen ? (
-                <MdOutlineKeyboardArrowUp className=" text-blue-main text-font-xl" />
+            <div
+              className={`flex justify-between px-4 py-2 text-font-sm items-center cursor-pointer ${
+                show && "text-blue-main bg-slate-2"
+              }`}
+              onClick={handleActive}
+            >
+              <span>{btn.name.toUpperCase()}</span>
+              {["pricing", "integrations"].includes(btn.name.toLowerCase()) ? (
+                <MdOutlineKeyboardArrowDown className="text-gray-2 text-font-2xl -rotate-90" />
+              ) : show ? (
+                <MdOutlineKeyboardArrowUp className=" text-blue-main text-font-2xl" />
               ) : (
-                <MdOutlineKeyboardArrowDown className="text-gray-2 text-font-xl" />
+                <MdOutlineKeyboardArrowDown className="text-gray-2 text-font-2xl" />
               )}
             </div>
           }
-          isOpen={isOpen}
         >
-          {dropdownContent}
+          {show && btn.dropdown}
         </Dropdown>
       </div>
     </>

@@ -7,7 +7,7 @@ const MenuIcon = ({isOpen, setOpen}) => {
   };
 
   return (
-    <div className="flex lg:hidden items-center justify-center h-screen">
+    <div className="flex lg:hidden items-center justify-center">
       <div
         className="relative w-8 h-6 cursor-pointer"
         onClick={toggleMenu}
