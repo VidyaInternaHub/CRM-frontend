@@ -5,7 +5,7 @@ import { FaAngleUp } from "react-icons/fa6";
 
 const NavResources = () => {
     const [openContent, setOpenContent] = useState(false);
-    const [activeTab, setActiveTab] = useState(1);
+    const [activeTab, setActiveTab] = useState(0);
 
     const tabs = [
         {
@@ -36,11 +36,13 @@ const NavResources = () => {
     ]
 
     const handleContent = (id) => {
-        setActiveTab(id)
-        if (!id) {
-            setOpenContent(!openContent)
+        
+        if (activeTab===id) {
+            setActiveTab(0)
+            setOpenContent(false)
         }
         else {
+            setActiveTab(id)
             setOpenContent(true)
         }
     }
@@ -85,9 +87,9 @@ const NavResources = () => {
                                 <div key={tab.id} className={`relative flex justify-between items-center px-4 py-2 w-full rounded-full  ${activeTab === tab.id && 'bg-slate-100'} border-gray-100 border-spacing-1`}
                                     onClick={() => handleContent(tab.id)}
                                 >
-                                    <div className='w-full flex justify-start  gap-x-2  text-gray-400  hover:text-blue-main group'>
-                                        <span className=' '>{tab.icon}</span>
-                                        <span className='font-bold text-black group-hover:text-blue-main'>{tab.label}</span>
+                                    <div className='w-full flex justify-start  gap-x-2 text-font-sm  text-gray-400  hover:text-blue-main group'>
+                                        <span className={`${activeTab===tab.id && 'text-blue-main'}`}>{tab.icon}</span>
+                                        <span className={`font-bold text-black group-hover:text-blue-main ${activeTab===tab.id && 'text-blue-main'}`}>{tab.label}</span>
                                     </div>
 
                                     <div className='cursor-pointer'>

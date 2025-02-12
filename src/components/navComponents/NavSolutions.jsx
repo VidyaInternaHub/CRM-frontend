@@ -5,7 +5,7 @@ import { FaAngleUp } from "react-icons/fa6";
 
 const NavSolutions = () => {
     const [openContent, setOpenContent] = useState(false);
-    const [activeTab, setActiveTab] = useState(1);
+    const [activeTab, setActiveTab] = useState(0);
 
     const tabs = [
         {
@@ -51,14 +51,16 @@ const NavSolutions = () => {
     ]
 
     const handleContent = (id) => {
-        setActiveTab(id)
-        if(id){
+
+        if (activeTab === id) {
+            setActiveTab(0)
+            setOpenContent(false)
+        }
+        else {
+            setActiveTab(id)
             setOpenContent(true)
         }
-        else{
-            setOpenContent(!openContent)
-        }
-        
+
     }
 
     return (
@@ -104,9 +106,9 @@ const NavSolutions = () => {
                                 <div key={tab.id} className={`relative flex justify-between items-center px-4 py-3 w-full ${activeTab === tab.id && 'bg-slate-2'} `}
                                     onClick={() => handleContent(tab.id)}
                                 >
-                                    <div className='w-full flex justify-start  gap-x-2  text-gray-600  hover:text-blue-main group'>
-                                        <span className=' '>{tab.icon}</span>
-                                        <span className='font-bold text-black group-hover:text-blue-main'>{tab.label}</span>
+                                    <div className={`w-full flex justify-start  gap-x-2 text-font-sm text-gray-600  hover:text-blue-main group ${activeTab===tab.id &&'text-blue-main'}`}>
+                                        <span className={` ${activeTab === tab.id && 'text-blue-main'}`}>{tab.icon}</span>
+                                        <span className={`font-bold text-black group-hover:text-blue-main ${activeTab === tab.id && 'text-blue-main'}`}>{tab.label}</span>
                                     </div>
 
                                     <div className=''>
@@ -117,8 +119,8 @@ const NavSolutions = () => {
                                     </div>
                                 </div>
                                 {
-                                    openContent && activeTab === tab.id && <div className='w-full' 
-                                    onClick={() => handleContent(tab.id)}
+                                    openContent && activeTab === tab.id && <div className='w-full'
+                                        onClick={() => handleContent(tab.id)}
                                     >
                                         <ul className='flex flex-col gap-y-2 justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
