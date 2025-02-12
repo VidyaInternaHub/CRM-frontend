@@ -14,7 +14,7 @@ const NavResources = () => {
             icon: (
                 <svg width="18" height="22" viewBox="0 0 18 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 16.203c0 .343-.29.621-.646.621H4.038c-.74 0-1.345.583-1.347 1.294 0 .712.606 1.294 1.347 1.294h13.316c.357 0 .646.278.646.621v1.346c0 .343-.29.621-.646.621H4.038C1.817 22 0 20.253 0 18.118V3.882C0 1.747 1.817 0 4.038 0h13.316c.357 0 .646.278.646.621v15.582z"></path></svg>
             ),
-            content: ["Webinars", "Helpdisk", "Guides & API Documentation"]
+            content: ["Webinars", "Helpdesk", "Guides & API Documentation"]
         },
         {
             id: 2,
@@ -75,14 +75,14 @@ const NavResources = () => {
 
             {/* Small devices */}
 
-            <section className='lg:hidden block absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6'>
+            <section className='lg:hidden block bg-white'>
                 <div className='w-full flex flex-col'>
                     {
                         tabs.map((tab) => (
                             <div className='flex flex-col'
                                 key={tab.id}
                             >
-                                <div key={tab.id} className={`relative flex justify-between items-center p-2 w-full rounded-full  ${activeTab === tab.id && 'bg-slate-100'} border-gray-100 border-spacing-1`}
+                                <div key={tab.id} className={`relative flex justify-between items-center py-2 pr-1 w-full rounded-full  ${activeTab === tab.id && 'bg-slate-100'} border-gray-100 border-spacing-1`}
                                     onClick={() => handleContent(tab.id)}
                                 >
                                     <div className='w-full flex justify-start  gap-x-2  text-gray-400  hover:text-blue-main group'>
