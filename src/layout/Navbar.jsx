@@ -9,11 +9,12 @@ import NavButton from "../components/navComponents/NavButton";
 import useClickOutside from "../hooks/useClickOutSide";
 import NavProduct from "../components/navComponents/NavProduct";
 import NavSolutions from "../components/navComponents/NavSolutions";
+import NavResources from "../components/navComponents/NavResources";
 
 const NavButtonsData = [
   { id: 1, name: "Product", dropdown: <NavProduct /> },
   { id: 2, name: "Pricing" },
-  { id: 3, name: "Resources", dropdown: "" },
+  { id: 3, name: "Resources", dropdown: <NavResources/> },
   { id: 4, name: "solutions", dropdown: <NavSolutions /> },
   { id: 5, name: "Integrations", dropdown: "" },
   { id: 6, name: "partners", dropdown: "" },
