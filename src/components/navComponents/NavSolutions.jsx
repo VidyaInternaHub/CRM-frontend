@@ -64,11 +64,11 @@ const NavSolutions = () => {
     return (
         <>
             {/* For large devices */}
-            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6'>
-                <div className='grid grid-cols-5   xl:w-[90%] w-full m-auto'>
+            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg px-6 pb-6'>
+                <div className='grid grid-cols-5   xl:w-[95%] w-full m-auto'>
                     {
                         tabs.map((tab) => (
-                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-font-sm '>
+                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-font-lg '>
                                 <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-blue-main hover:bg-blue-main hover:text-white p-6 rounded-full group'>
                                     <span className=' '>{tab.icon}</span>
                                     <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
@@ -76,7 +76,7 @@ const NavSolutions = () => {
                                 <div>
                                     <ul className='flex flex-col gap-y-4 justify-center items-start'>
                                         {tab.content.map((item, index) => (
-                                            <li key={index} className='hover:text-[#409eef] ml-5 text-lg'><a href="_">{item}</a></li>
+                                            <li key={index} className='hover:text-blue-main ml-5 text-font-lg'><a href="_">{item}</a></li>
                                         ))}
                                     </ul>
                                 </div>
@@ -91,7 +91,6 @@ const NavSolutions = () => {
                     </div>
                 </div>
             </section>
-
 
             {/* Small devices */}
 

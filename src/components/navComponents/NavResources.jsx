@@ -47,11 +47,11 @@ const NavResources = () => {
     return (
         <>
             {/* For large devices */}
-            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 z-10'>
+            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg px-6 pb-6 z-10'>
                 <div className='grid grid-cols-3   xl:w-[90%] w-full m-auto'>
                     {
                         tabs.map((tab) => (
-                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-font-sm '>
+                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  px-2  text-font-lg '>
                                 <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-blue-main hover:bg-blue-main hover:text-white p-6  rounded-full group'>
                                     <span className=' '>{tab.icon}</span>
                                     <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
@@ -103,7 +103,6 @@ const NavResources = () => {
                                             {tabs[activeTab - 1].content.map((item, index) => (
                                                 <div className='flex flex-col gap-1 w-full ml-4'>
                                                     <li key={index} className='hover:text-blue-main ml-5 text-font-sm'><a href="_">{item}</a></li>
-                                                    {/* <hr className='h-[1px] bg-gray-300 w-full' /> */}
                                                 </div>
 
                                             ))}
