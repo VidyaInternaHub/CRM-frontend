@@ -52,12 +52,13 @@ const NavSolutions = () => {
 
     const handleContent = (id) => {
         setActiveTab(id)
-        if (!id) {
-            setOpenContent(!openContent)
-        }
-        else {
+        if(id){
             setOpenContent(true)
         }
+        else{
+            setOpenContent(!openContent)
+        }
+        
     }
 
     return (
@@ -67,10 +68,10 @@ const NavSolutions = () => {
                 <div className='grid grid-cols-5   xl:w-[90%] w-full m-auto'>
                     {
                         tabs.map((tab) => (
-                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-sm '>
-                                <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-[#409eef] hover:bg-[#409eef] hover:text-white p-6 rounded-full group'>
+                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-font-sm '>
+                                <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-blue-main hover:bg-blue-main hover:text-white p-6 rounded-full group'>
                                     <span className=' '>{tab.icon}</span>
-                                    <span className='font-bold text-black-1 group-hover:text-white'>{tab.label}</span>
+                                    <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
                                 </div>
                                 <div>
                                     <ul className='flex flex-col gap-y-4 justify-center items-start'>
@@ -85,7 +86,7 @@ const NavSolutions = () => {
                 </div>
                 <div className='flex justify-end  xl:w-[90%] w-full m-auto '>
                     <div className='flex items-center gap-2 cursor-pointer'>
-                        <span className='hover:text-[#409eef]'>See all solutions</span>
+                        <span className='hover:text-blue-main'>See all solutions</span>
                         <span><FaAngleRight fill='#409eef' /></span>
                     </div>
                 </div>
@@ -101,28 +102,30 @@ const NavSolutions = () => {
                             <div className='flex flex-col'
                                 key={tab.id}
                             >
-                                <div key={tab.id} className={`relative flex justify-between items-center py-2 pr-1 w-full ${activeTab === tab.id && 'bg-slate-100'} `}
+                                <div key={tab.id} className={`relative flex justify-between items-center py-2 w-full ${activeTab === tab.id && 'bg-slate-2'} `}
                                     onClick={() => handleContent(tab.id)}
                                 >
-                                    <div className='w-full flex justify-start  gap-x-2  text-gray-400  hover:text-[#409eef] group'>
+                                    <div className='w-full flex justify-start  gap-x-2  text-gray-600  hover:text-blue-main group'>
                                         <span className=' '>{tab.icon}</span>
-                                        <span className='font-bold text-black-1 group-hover:text-[#409eef]'>{tab.label}</span>
+                                        <span className='font-bold text-black group-hover:text-blue-main'>{tab.label}</span>
                                     </div>
 
                                     <div className=''>
                                         {
-                                            openContent && activeTab === tab.id ? <span><FaAngleUp fill='#409eef' /></span> :
+                                            openContent && activeTab === tab.id ? <span><FaAngleUp fill='blue-main' /></span> :
                                                 <span><FaAngleDown /></span>
                                         }
                                     </div>
                                 </div>
                                 {
-                                    openContent && activeTab === tab.id && <div className='w-full'>
+                                    openContent && activeTab === tab.id && <div className='w-full' 
+                                    onClick={() => handleContent(tab.id)}
+                                    >
                                         <ul className='flex flex-col gap-y-2 justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
                                                 <div className='flex flex-col gap-1 w-full ml-4 cursor-pointer'>
-                                                    <li key={index} className='hover:text-[#409eef] text-[1rem]'><a href="_">{item}</a></li>
-                                                    {/* <hr className='h-[1px] bg-gray-300 w-full' /> */}
+                                                    <li key={index} className='hover:text-blue-main text-font-sm'><a href="_">{item}</a></li>
+                                                    <hr className='h-[1px] bg-gray-300 w-full' />
                                                 </div>
 
                                             ))}
