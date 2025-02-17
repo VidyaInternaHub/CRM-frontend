@@ -87,10 +87,11 @@ const NavSolutions = () => {
                     }
                 </div>
                 <div className='flex justify-end  xl:w-[90%] w-full m-auto '>
-                    <div className='flex items-center gap-2 cursor-pointer'>
-                        <span className='hover:text-blue-main'>See all solutions</span>
-                        <span><FaAngleRight fill='#409eef' /></span>
-                    </div>
+                    <a href="/solutions" className='flex items-center gap-2 cursor-pointer'>
+                    <span className='hover:text-blue-main'>See all solutions</span>
+                    <span><FaAngleRight fill='#409eef' /></span>
+                    </a>
+
                 </div>
             </section>
 
@@ -137,9 +138,6 @@ const NavSolutions = () => {
 
                         ))
                     }
-
-
-
                 </div>
 
             </section>
