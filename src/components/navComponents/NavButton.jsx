@@ -2,24 +2,24 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import Dropdown from "./Dropdown";
+import Accordion from "./Accordion";
 
 const NavButton = ({ btn, active, setActive }) => {
-  const [show, setShow] = useState(active === btn.id);
+  const [show, setShow] = useState(false);
 
-  const handleActive = () =>{
-    if(show){
-      console.log("active is:" + active)
-      setActive(0);
-      setShow(false)
-    }else{
+  const handleActive = () => {
+    if (show) {
+      setActive(1);
+      setShow(false);
+    } else {
       setActive(btn.id);
-      setShow(active === btn.id);
+      setShow(true);
     }
-  }
+  };
 
   useEffect(() => {
     setShow(active === btn.id);
-  }, [active]);
+  }, [active, btn.id]);
 
   return (
     <>

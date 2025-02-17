@@ -1,82 +1,77 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ProductMenu from "./ProductMenu";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Dropdown from "./Dropdown";
+import Accordion from "./Accordion";
+import { navContext } from "../../layout/Navbar";
 
 const tabs = [
   {
-    id: 0,
+    id: 1,
     label: "CRM",
     iconColor: "text-[#409EEF]",
     icon: (
-      <svg
-        width="25"
-        height="25"
-        viewBox="0 0 25 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
           d="M2 3.5h21.385a1.002 1.002 0 0 1 .944 1.334L23.683 6.7a1 1 0 0 1-.944.674H2.641a1 1 0 0 1-.945-.676l-.641-1.865A1.005 1.005 0 0 1 2 3.5zm3.522 7.16h14.34a1.002 1.002 0 0 1 .936 1.357l-.696 1.865a1 1 0 0 1-.935.651H6.18a1 1 0 0 1-.941-.668L4.579 12a1.005 1.005 0 0 1 .943-1.34zm4.452 7.181h5.437a1.002 1.002 0 0 1 .957 1.293l-.557 1.865a1 1 0 0 1-.957.715h-4.263a1 1 0 0 1-.948-.687l-.617-1.865a1.005 1.005 0 0 1 .948-1.32z"
           fill="currentColor"
-          // className="fill-current text-[#409EEF] group-hover:text-white"
         ></path>
       </svg>
     ),
     tag: "Manage sales and clients effectively",
     content: [
       {
-        id: 0,
+        id: 1,
         title: "Sales management",
         description:
           "Manage leads deals, contents pipelines, access permissions & roles ",
       },
       {
-        id: 1,
+        id: 2,
         title: "Contact center",
         description:
           "Omnichannel communications via CRM forms, website widget, live chat, WhatsApp, Instagram, telephony, email",
       },
       {
-        id: 2,
+        id: 3,
         title: "Sales team collaboration",
         description:
           "Work with chat, video calls, tasks, calendar, file storage, online documents",
       },
       {
-        id: 3,
+        id: 4,
         title: "Sales enablement",
         description:
           "Get estimates, invoices, payments, catalog, inventory, e-signature, CRM store",
       },
       {
-        id: 4,
+        id: 5,
         title: "Analytics & reports",
         description:
           "Analyze sales funnel, employee performance, Sales Intelligence, Bi Builder dashboards",
       },
       {
-        id: 5,
+        id: 6,
         title: "Mobile CRM",
         description:
           "Leads, deals, invoices, payments, telephony, emails, inventory, calender your fingertips",
       },
       {
-        id: 6,
+        id: 7,
         title: "Marketing",
         description:
           "Use email campaigns, social media ads, SMS, telemarketing, landing pages",
       },
       {
-        id: 7,
+        id: 8,
         title: "Automation & integrations",
         description:
           "Set CRM rules and triggers, workflow automation, automated funnels, API",
       },
       {
-        id: 8,
+        id: 9,
         title: "CoPilot in CRM",
         description:
           "Call audio-to-text transcription, call summary, field autocompletion in deals",
@@ -84,17 +79,11 @@ const tabs = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     label: "Tasks & Projects",
     iconColor: "text-[#BDF300]",
     icon: (
-      <svg
-        width="25"
-        height="25"
-        viewBox="0 0 25 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -107,55 +96,55 @@ const tabs = [
     tag: "Get work done easier & faster",
     content: [
       {
-        id: 0,
+        id: 1,
         title: "Task management",
         description:
           "Choose between Kanban board, Gantt chart, Scrum, task list",
       },
       {
-        id: 1,
+        id: 2,
         title: "Task tracking",
         description:
           "Take advantage of checklists & sub-tasks, task summary, time tracking, focus & supervisor mode",
       },
       {
-        id: 2,
+        id: 3,
         title: "API & integrations",
         description:
           "Connect your task to other services via API integration for advanced task automation",
       },
       {
-        id: 3,
+        id: 4,
         title: "Project management",
         description:
           "Use projects, workgroups, project planning, roles, access permissions",
       },
       {
-        id: 4,
+        id: 5,
         title: "Employee performance",
         description:
           "Get productive with task reports, workload management, task efficiency & KPI",
       },
       {
-        id: 5,
+        id: 6,
         title: "Mobile tasks",
         description:
           "Task creation, task tracking notifications, comments, chat on the go",
       },
       {
-        id: 6,
+        id: 7,
         title: "Project collaboration",
         description:
           "Work faster with chat, video calls, comments, file storage, documents, external users, task templates",
       },
       {
-        id: 7,
+        id: 8,
         title: "Automation",
         description:
           "Save time with automatic task creation and workflow automation",
       },
       {
-        id: 8,
+        id: 9,
         title: "CoPilot in Tasks",
         description:
           "AI-generated task descriptions, task summaries, checklists, comments",
@@ -163,17 +152,11 @@ const tabs = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     label: "Collaboration",
     iconColor: "text-[#FFB45C]",
     icon: (
-      <svg
-        width="25"
-        height="25"
-        viewBox="0 0 25 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#a)">
           <path
             fill-rule="evenodd"
@@ -193,43 +176,43 @@ const tabs = [
     tag: "Get work done easier & faster",
     content: [
       {
-        id: 0,
+        id: 1,
         title: "Online workspace",
         description:
           "Use chat, activity feed, comments reactions, company-wide video announcements",
       },
       {
-        id: 1,
+        id: 2,
         title: "Online documents & file storage",
         description:
           "Store, share and edit documents online easily with co-workers using company drive",
       },
       {
-        id: 2,
+        id: 3,
         title: "Workgroups",
         description:
           "Create workgroups, invite external users, set access permissions and work on tasks and projects",
       },
       {
-        id: 3,
+        id: 4,
         title: "Online meetings",
         description:
           "Do more with video calls, video conferencing, screen sharing, call recording and custom backgrounds",
       },
       {
-        id: 4,
+        id: 5,
         title: "Shared calendars",
         description:
           "Plan with company & personal calendar, open time slots, meeting room booking, calendar sync",
       },
       {
-        id: 5,
+        id: 6,
         title: "Mobile communications",
         description:
           "Team messenger, video calls, comments, calendar, notifications anywhere",
       },
       {
-        id: 6,
+        id: 7,
         title: "CoPilot in Chat",
         description:
           "Unlimited source of ideas, AI-generated texts, brainstorming, and more",
@@ -237,17 +220,11 @@ const tabs = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     label: "Site & Stores",
     iconColor: "text-[#F36DAB]",
     icon: (
-      <svg
-        width="25"
-        height="25"
-        viewBox="0 0 25 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="m5.164 2.245.672 3.075 18.252-.033c.28.002.545.14.716.372.174.234.236.537.171.826l-1.711 10.068c-.098.435-.465.743-.886.745H7.394c-.421-.002-.788-.31-.886-.745L3.545 3.443H.97a.971.971 0 1 1 0-1.943h3.307c.422.003.787.31.886.745zM10.047 23.318c-1.281 0-2.321-1.102-2.321-2.46 0-1.359 1.04-2.46 2.321-2.46 1.283 0 2.323 1.1 2.323 2.46 0 1.358-1.04 2.46-2.323 2.46zM19.658 23.318c-1.282 0-2.321-1.102-2.321-2.46 0-1.359 1.04-2.46 2.321-2.46 1.283 0 2.323 1.1 2.323 2.46 0 1.358-1.04 2.46-2.323 2.46z"
           fill="currentColor"
@@ -258,55 +235,55 @@ const tabs = [
     tag: "Create websites that sell",
     content: [
       {
-        id: 0,
+        id: 1,
         title: "Website builder",
         description:
           "Use our free CMS, templates, hosting, AI-generated images and texts to create awesome sites",
       },
       {
-        id: 1,
+        id: 2,
         title: "Social selling",
         description:
           "Sell your products directly via Facebook, Instagram, WhatsApp or Telegram",
       },
       {
-        id: 2,
+        id: 3,
         title: "Website forms",
         description:
           "Capture leads with custom order forms, registration & feedback forms, and forms with conditional fields",
       },
       {
-        id: 3,
+        id: 4,
         title: "Landing pages",
         description:
           "Generate leads with capture forms, automated funnels and Google Analytics integration",
       },
       {
-        id: 4,
+        id: 5,
         title: "Online store",
         description:
           "Maximize ecommerce with inventory management, order processing, delivery and online payments",
       },
       {
-        id: 5,
+        id: 6,
         title: "Mobile sites & online stores",
         description:
           "Responsive design, online orders, client management in your pocket",
       },
       {
-        id: 6,
+        id: 7,
         title: "Website widget",
         description:
           "Enable widget to chat with site visitors, use popular messengers and accept callback requests",
       },
       {
-        id: 7,
+        id: 8,
         title: "Online marketing tolls",
         description:
           "Increase sales with email marketing, Facebook or Google Ads, marketing automation, CRM integration",
       },
       {
-        id: 8,
+        id: 9,
         title: "CoPilot in Sites & Stores",
         description:
           "Compelling copy on demand, AI-generated images, detailed prompts, text translation",
@@ -314,17 +291,11 @@ const tabs = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     label: "HR & Automation",
     iconColor: "text-[#66D74A]",
     icon: (
-      <svg
-        width="25"
-        height="25"
-        viewBox="0 0 25 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -337,49 +308,49 @@ const tabs = [
     tag: "Optimize workflows & manage HR data",
     content: [
       {
-        id: 0,
+        id: 1,
         title: "Employee management",
         description:
           "Use employee profiles, company structure, access permissions, Active Directory",
       },
       {
-        id: 1,
+        id: 2,
         title: "Culture & engagement",
         description:
           "Get company news, polls, appreciation badges, tags, personal notifications",
       },
       {
-        id: 2,
+        id: 3,
         title: "Mobile HR",
         description:
           "Chat video calls, employee profiles, approvals, notifications on the go",
       },
       {
-        id: 3,
+        id: 4,
         title: "Work management",
         description:
           "Track employee performance with KPI work reports, supervisor view",
       },
       {
-        id: 4,
+        id: 5,
         title: "Internal communications",
         description:
           "Communicate via video announcements, memos, public and private chats",
       },
       {
-        id: 5,
+        id: 6,
         title: "CoPilot in fee",
         description:
           "Thread Summaries, AI-generated ideas, text editing & creation, AI-written responses, text translation",
       },
       {
-        id: 6,
+        id: 7,
         title: "Information management",
         description:
           "Work with knowledge bases, online documents, file storage, access permissions",
       },
       {
-        id: 7,
+        id: 8,
         title: "Automation",
         description:
           "Streamline operations with requests, approvals, expense reports, RPA, workflow automation",
@@ -387,17 +358,11 @@ const tabs = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     label: "CoPilot",
     iconColor: "text-[#8E52EC]",
     icon: (
-      <svg
-        width="25"
-        height="25"
-        viewBox="0 0 25 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#a)" fill="currentColor">
           <path
             fill-rule="evenodd"
@@ -422,31 +387,31 @@ const tabs = [
     tag: "Your AI-powered assistant in Bitrix24",
     content: [
       {
-        id: 0,
+        id: 1,
         title: "CoPilot in CRM",
         description:
           "Call audio-to-text transcription, call summary, field autocompletion in deals",
       },
       {
-        id: 1,
+        id: 2,
         title: "CoPilot in Tasks",
         description:
           "AI-generated task descriptions, task summaries, checklists, comments",
       },
       {
-        id: 2,
+        id: 3,
         title: "CoPilot in Chat",
         description:
           "Unlimited source of ideas, AI-generated texts, brainstorming, and more",
       },
       {
-        id: 3,
+        id: 4,
         title: "CoPilot in Sites & Stores",
         description:
           "Compelling copy on demand, AI-generated images, detailed prompts, text translation",
       },
       {
-        id: 4,
+        id: 5,
         title: "CoPilot in Feed",
         description:
           "Thread summaries, AI-generated ideas, text editing & creation, AI-written responses, text translation",
@@ -456,101 +421,147 @@ const tabs = [
 ];
 
 const NavProduct = () => {
+  const value = useContext(navContext)
   const [activeTab, setActiveTab] = useState(0);
+
+  const [selectedIdForLargeScreen,setSelectedIdForLargeScreen] = useState(value.productId === 0 ? 1 : value.productId);
+
+  useEffect(()=>{
+    setSelectedIdForLargeScreen(value.productId === 0 ? 1 : value.productId);
+  },[value.productId])
+
+  console.log("component re-render");
 
   return (
     <>
-    {/* -------------for large screen---------- */}
-    <div className="hidden lg:block container px-2 text-black-2">
-      <div className="flex max-w-[1330px]">
-        {/* -------menu buttons container------- */}
-        <div className="min-w-[22.5rem] mr-3 flex flex-col gap-[0.3rem]">
-          {tabs.map((tab) => (
-            <a
-              href={`/tools/${tab.label.toLowerCase()}/`}
-              className="flex items-center"
-              onMouseEnter={() => setActiveTab(tab.id)}
-            >
-              <ProductMenu
-                key={tab.id}
-                className={
-                  activeTab === tab.id
-                    ? "bg-blue-main text-white"
-                    : "bg-gray-menu"
-                }
+      {/* -------------for large screen---------- */}
+      <div className="lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 ">
+        <div className="flex max-w-[95%] justify-center mx-auto">
+          {/* -------menu buttons container------- */}
+          <div className="min-w-[22.5rem] mr-3 flex flex-col gap-[0.3rem]">
+            {tabs.map((tab) => (
+              <a
+                href={`/tools/${tab.label.toLowerCase()}/`}
+                className="flex items-center"
+                onMouseEnter={() => value.setProductId(tab.id)}
               >
-                <div className="flex items-center gap-3">
+                <ProductMenu
+                  key={tab.id}
+                  className={
+                    selectedIdForLargeScreen === tab.id
+                      ? "bg-blue-main text-white"
+                      : "bg-gray-menu"
+                  }
+                >
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`icon h-6 w-6 ${
+                        selectedIdForLargeScreen === tab.id
+                          ? "text-white"
+                          : tab.iconColor
+                      }`}
+                    >
+                      {tab.icon}
+                    </span>
+                    <span className="uppercase">{tab.label}</span>
+                  </div>
+                  <MdOutlineKeyboardArrowRight
+                    className={`text-font-3xl font-normal ${
+                      tab.id === selectedIdForLargeScreen
+                        ? "text-white"
+                        : "text-gray-1"
+                    }`}
+                  />
+                </ProductMenu>
+              </a>
+            ))}
+            <div className=" text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5">
+              <div className="hover:text-blue-main w-fit flex cursor-pointer items-center">
+                <span>See all tools</span>
+                <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
+              </div>
+            </div>
+          </div>
+
+          {/* ------menu content------- */}
+          <div className="max-w-[56.625rem] border-l-4 border-opacity-40 border-gray-1 bg-white pl-8 pr-5 ">
+            {/* --------menu content title-------- */}
+            <div className="container xl:pb-8 pb-5">
+              <div className="w-fit bg-white cursor-pointer group">
+                <div className="text-font-2xl font-bold flex gap-3 items-center mb-1">
                   <span
-                    className={`icon ${
-                      activeTab === tab.id ? "text-white" : tab.iconColor
+                    className={`icon h-6 w-6 ${
+                      tabs[selectedIdForLargeScreen - 1].iconColor
                     }`}
                   >
-                    {tab.icon}
+                    {tabs[selectedIdForLargeScreen - 1].icon}
                   </span>
-                  <span className="uppercase">{tab.label}</span>
+                  <span className={`capitalize group-hover:text-blue-main`}>
+                    {tabs[selectedIdForLargeScreen - 1].label}
+                  </span>
                 </div>
-                <MdOutlineKeyboardArrowRight className={`text-font-3xl font-normal ${tab.id===activeTab ? "text-white" :"text-gray-1" }`} />
-              </ProductMenu>
-            </a>
-          ))}
-          <div className=" text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5">
-            <div className="hover:text-blue-main w-fit flex cursor-pointer items-center">
-              <span>See all tools</span>
-              <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
-            </div>
-          </div>
-        </div>
-
-        {/* ------menu content------- */}
-        <div className="max-w-[56.625rem] border-l-4 border-opacity-40 border-gray-1 bg-white pl-8 pr-5 ">
-          {/* --------menu content title-------- */}
-          <div className="container xl:pb-8 pb-5">
-            <div
-              className="w-fit bg-white cursor-pointer group"
-            >
-              <div className="text-font-2xl font-bold flex gap-3 items-center mb-1">
-                <span className={`icon ${tabs[activeTab].iconColor}`}>{tabs[activeTab].icon}</span>
-                <span className={`capitalize group-hover:text-blue-main`}>
-                  {tabs[activeTab].label}
-                </span>
+                <div className="text-left text-gray-2">
+                  {tabs[selectedIdForLargeScreen - 1].tag}
+                </div>
               </div>
-              <div className="text-left text-gray-2">{tabs[activeTab].tag}</div>
             </div>
-          </div>
 
-          {/* --------menu content items in grid view -------- */}
-          <div className=" bg-white">
-            <div className="max-h-[17rem] xl:max-h-[19.5rem] overflow-y-auto">
-              <div className="grid grid-rows-3 grid-cols-2 xl:grid-cols-3 gap-2 text-left ">
-                {tabs[activeTab].content.map((item) => (
-                  <div
-                    key={item.id}
-                    className=" pt-1.5 pb-3 pr-6 xl:pb-4 group cursor-pointer"
-                  >
-                    <div className="text-font-base font-semibold mb-1 group-hover:text-blue-main">
-                      {item.title}
+            {/* --------menu content items in grid view -------- */}
+            <div className=" bg-white">
+              <div className="max-h-[17rem] xl:max-h-[19.5rem] overflow-y-auto">
+                <div className="grid grid-rows-3 grid-cols-2 xl:grid-cols-3 gap-2 text-left ">
+                  {tabs[selectedIdForLargeScreen - 1].content.map((item) => (
+                    <div
+                      key={item.id}
+                      className=" pt-1.5 pb-3 pr-6 xl:pb-4 group cursor-pointer"
+                    >
+                      <div className="text-font-base font-semibold mb-1 group-hover:text-blue-main">
+                        {item.title}
+                      </div>
+                      <div className="text-font-sm leading-4">
+                        {item.description}
+                      </div>
                     </div>
-                    <div className="text-font-sm leading-4">{item.description}</div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className=" text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5 ">
-              <div className="hover:text-blue-main w-fit flex cursor-pointer items-center ">
-                <span>See all {tabs[activeTab].label} features</span>
-                <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
+              <div className=" text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5 ">
+                <div className="hover:text-blue-main w-fit flex cursor-pointer items-center ">
+                  <span>
+                    See all {tabs[selectedIdForLargeScreen - 1].label} features
+                  </span>
+                  <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    {/* ------------for small screen----------- */}
-    <div className="lg:hidden container px-2 text-black-2">
-
-    </div>
-
+      {/* ------------for small screen----------- */}
+      <div className="lg:hidden">
+        {tabs.map((tab) => (
+          <Accordion
+            title={
+              <div className="flex items-center gap-3">
+                <span className={`icon h-4 w-4  ${tab.iconColor}`}>
+                  {tab.icon}
+                </span>
+                <span className={`capitalize text-font-sm`}>{tab.label}</span>
+              </div>
+            }
+            currentId={tab.id}
+            activeId={activeTab}
+            setActiveId={setActiveTab}
+          >
+            <ul className="list-disc pl-5 ml-4 w-full text-font-sm font-normal text-black-2">
+              {tab.content.map((content) => (
+                <li className="py-2">{content.title}</li>
+              ))}
+            </ul>
+          </Accordion>
+        ))}
+      </div>
     </>
   );
 };

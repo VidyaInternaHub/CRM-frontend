@@ -1,6 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 
 export default function Dropdown({ children, trigger }) {
+  
   return (
     <div className=" w-full mx-auto">
       <div>{trigger}</div>
