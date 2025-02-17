@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import Dropdown from "./Dropdown";
-import Accordion from "./Accordion";
 
 const NavButton = ({ btn, active, setActive }) => {
   const [show, setShow] = useState(false);

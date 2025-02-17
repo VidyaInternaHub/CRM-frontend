@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import ProductMenu from "./ProductMenu";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import Dropdown from "./Dropdown";
+// import Dropdown from "./Dropdown";
 import Accordion from "./Accordion";
 import { navContext } from "../../layout/Navbar";
 

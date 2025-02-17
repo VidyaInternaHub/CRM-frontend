@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext, useContext } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import { IoSearch } from "react-icons/io5";
 import logo from "../assets/bitrix24-seeklogo.svg";
 import { ImUser } from "react-icons/im";
@@ -6,7 +6,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import DropdownContainer from "../components/navComponents/DropdownContainer";
 import MenuIcon from "../components/navComponents/MenuIcon";
 import NavButton from "../components/navComponents/NavButton";
-import useClickOutside from "../hooks/useClickOutSide";
+// import useClickOutside from "../hooks/useClickOutSide";
 import NavProduct from "../components/navComponents/NavProduct";
 import NavSolutions from "../components/navComponents/NavSolutions";
 import NavResources from "../components/navComponents/NavResources";
