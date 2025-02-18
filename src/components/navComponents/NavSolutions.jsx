@@ -112,7 +112,7 @@ const NavSolutions = () => {
                                         <span className={`font-bold text-black group-hover:text-blue-main ${activeTab === tab.id && 'text-blue-main'}`}>{tab.label}</span>
                                     </div>
 
-                                    <div className=''>
+                                    <div>
                                         {
                                             openContent && activeTab === tab.id ? <span><FaAngleUp fill='blue-main' /></span> :
                                                 <span><FaAngleDown /></span>
@@ -123,11 +123,11 @@ const NavSolutions = () => {
                                     openContent && activeTab === tab.id && <div className='w-full'
                                         onClick={() => handleContent(tab.id)}
                                     >
-                                        <ul className='flex flex-col gap-y-2 justify-center items-start w-full list-disc text-gray-700'>
+                                        <ul className='flex flex-col justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
-                                                <div className='flex flex-col gap-1 w-full ml-4 cursor-pointer'>
-                                                    <li key={index} className='hover:text-blue-main text-font-sm ml-4'><a href="_">{item}</a></li>
-                                                    {/* <hr className='h-[1px] bg-gray-300 w-full' /> */}
+                                                <div className='flex flex-col  w-full px-4 cursor-pointer'>
+                                                    <li key={index} className='hover:text-blue-main text-font-sm ml-4 py-2'><a href="_">{item}</a></li>
+                                                    <hr className='h-[1px] bg-gray-300 w-full' />
                                                 </div>
 
                                             ))}

@@ -17,6 +17,7 @@ module.exports = withMT({
       "auth-button":"#afe016",
       "slate-2":"#f1f5f9",
       "green-button": "#bdf300",
+      "gray-0":"#f8f8f8",
       "gray-1": "#e1e1e1",
       "gray-2": "#bbbbbb",
       "black-2": "#262626",
