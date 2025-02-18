@@ -103,8 +103,9 @@ const NavResources = () => {
                                     openContent && activeTab === tab.id && <div className='w-full'>
                                         <ul className='flex flex-col gap-y-2 justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
-                                                <div className='flex flex-col gap-1 w-full ml-4'>
-                                                    <li key={index} className='hover:text-blue-main ml-5 text-font-sm'><a href="_">{item}</a></li>
+                                                <div className='flex flex-col w-full px-4'>
+                                                    <li key={index} className='hover:text-blue-main ml-5 text-font-sm py-2'><a href="_">{item}</a></li>
+                                                    <hr className="h-[1px] bg-gray-50 w-full" />
                                                 </div>
 
                                             ))}

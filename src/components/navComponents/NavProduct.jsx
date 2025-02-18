@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import ProductMenu from "./ProductMenu";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 // import Dropdown from "./Dropdown";
-import Accordion from "./Accordion";
+import Accordion, {List} from "./Accordion";
 import { navContext } from "../../layout/Navbar";
 
 const tabs = [
@@ -421,14 +421,16 @@ const tabs = [
 ];
 
 const NavProduct = () => {
-  const value = useContext(navContext)
+  const value = useContext(navContext);
   const [activeTab, setActiveTab] = useState(0);
 
-  const [selectedIdForLargeScreen,setSelectedIdForLargeScreen] = useState(value.productId === 0 ? 1 : value.productId);
+  const [selectedIdForLargeScreen, setSelectedIdForLargeScreen] = useState(
+    value.productId === 0 ? 1 : value.productId
+  );
 
-  useEffect(()=>{
+  useEffect(() => {
     setSelectedIdForLargeScreen(value.productId === 0 ? 1 : value.productId);
-  },[value.productId])
+  }, [value.productId]);
 
   console.log("component re-render");
 
@@ -542,23 +544,11 @@ const NavProduct = () => {
       <div className="lg:hidden">
         {tabs.map((tab) => (
           <Accordion
-            title={
-              <div className="flex items-center gap-3">
-                <span className={`icon h-4 w-4  ${tab.iconColor}`}>
-                  {tab.icon}
-                </span>
-                <span className={`capitalize text-font-sm`}>{tab.label}</span>
-              </div>
-            }
-            currentId={tab.id}
+            tab={tab}
             activeId={activeTab}
             setActiveId={setActiveTab}
           >
-            <ul className="list-disc pl-5 ml-4 w-full text-font-sm font-normal text-black-2">
-              {tab.content.map((content) => (
-                <li className="py-2">{content.title}</li>
-              ))}
-            </ul>
+            <List tab={tab}/>
           </Accordion>
         ))}
       </div>

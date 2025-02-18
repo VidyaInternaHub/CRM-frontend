@@ -24,7 +24,7 @@ const NavButton = ({ btn, active, setActive }) => {
     <>
       {/* ----------------for large screen ------------- */}
       <div
-        className={`hidden w-full my-auto lg:flex cursor-pointer px-1 py-2 border-2 border-blue-dark border-opacity-0  rounded-xl hover:text-blue-main ${
+        className={`hidden w-full my-auto lg:flex cursor-pointer px-1 py-3 border-2 border-blue-dark border-opacity-0  rounded-xl hover:text-blue-main ${
           show &&
           (btn.name.toLowerCase() === "price"
             ? "border-opacity-100"
@@ -43,17 +43,17 @@ const NavButton = ({ btn, active, setActive }) => {
       {/* ----------------for small screen ------------- */}
 
       <div
-        className={` flex w-full lg:hidden my-2 justify-between items-center border-2 border-gray-1 border-opacity-50 rounded-xl text-black-2 ${
+        className={` flex w-full lg:hidden overflow-hidden my-2 justify-between items-center border-2 border-gray-1 border-opacity-50 rounded-xl text-black-2 ${
           show && "text-blue"
         }`}
       >
         <Dropdown
           trigger={
             <div
-              className={`flex justify-between px-4 py-2 text-font-sm items-center cursor-pointer ${
-                show && "text-blue-main bg-slate-2"
+              className={`flex justify-between px-4 py-3 text-font-sm items-center cursor-pointer ${
+                show && "text-blue-main bg-gray-0"
               }`}
-              onClick={handleActive}
+              onClick={handleActive} 
             >
               <span>{btn.name.toUpperCase()}</span>
               {["pricing", "integrations"].includes(btn.name.toLowerCase()) ? (
