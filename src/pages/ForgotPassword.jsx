@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowLeft } from "react-icons/fa6";
-import { forgotPasswordConfig } from '../data/pagesData';
+import { forgotPasswordData } from '../data/ComponentsData';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css'
 
@@ -9,7 +9,7 @@ const ForgotPassword = () => {
     const [message, setMessage] = useState('Message will be shown here');
     const [inputValue, setInputValue] = useState('');
     const [isPhoneNumber, setIsPhoneNumber] = useState(false);
-    const { logo, backLink, textSection, languageOptions, mainContent } = forgotPasswordConfig;
+    const { logo, backLink, textSection, languageOptions, mainContent } = forgotPasswordData;
 
     const validateInput = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -23,12 +23,12 @@ const ForgotPassword = () => {
             setIsPhoneNumber(true);
             return true;
         } else {
-            if(isPhoneNumber){
+            if (isPhoneNumber) {
                 setMessage('Please enter a valid  10-digit phone number');
-            }else{
+            } else {
                 setMessage('Please enter a valid email ');
             }
-            
+
             return false;
         }
 
@@ -114,21 +114,21 @@ const ForgotPassword = () => {
 
                                     </div>
                             }
-                   
+
 
                         </div>
                         <div className="">
-                                <span
-                                    className="text-blue-500 cursor-pointer"
-                                    onClick={() => {
-                                        setIsPhoneNumber(!isPhoneNumber);
-                                        setMessage('');
-                                        setInputValue('');
-                                    }}
-                                >
-                                    {isPhoneNumber ? 'Switch to Email' : 'Switch to Phone Number'}
-                                </span>
-                            </div>
+                            <span
+                                className="text-blue-500 cursor-pointer"
+                                onClick={() => {
+                                    setIsPhoneNumber(!isPhoneNumber);
+                                    setMessage('');
+                                    setInputValue('');
+                                }}
+                            >
+                                {isPhoneNumber ? 'Switch to Email' : 'Switch to Phone Number'}
+                            </span>
+                        </div>
 
                         {/* message section */}
                         <div >
