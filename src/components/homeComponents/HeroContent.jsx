@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import ProgressBar from '../common/ProgressBar';
-import {NavContentData} from '../../data/ComponentsData'
+import {HeroContentData} from '../../data/ComponentsData'
 
 const HeroContent = () => {
     const [activeTab, setActiveTab] = useState(1);
     const [progress, setProgress] = useState(0);
-    const {title,tabs,solutionTab,solutionButton}=NavContentData;
+    const {title,tabs,solutionTab,solutionButton}=HeroContentData;
    
     useEffect(() => {
         const interval = setInterval(() => {
