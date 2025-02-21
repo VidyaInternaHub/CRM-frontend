@@ -1,9 +1,7 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./layout/Navbar";
 import HomePage from "./pages/HomePage";
 import ForgotPassword from './pages/ForgotPassword'
-import SolutionsPage from "./pages/SolutionsPage";
 
 function App() {
   return (
@@ -14,7 +12,6 @@ function App() {
 
           <Route path='/' element={<HomePage />} />
           <Route path='/forgotpassword' element={<ForgotPassword />} />
-          <Route path="/solutions" element={<SolutionsPage/>} />
         </Routes>
       </BrowserRouter>
     </div>

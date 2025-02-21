@@ -22,30 +22,30 @@ const NavPartners = () => {
     }
     return (
         <>
-            {/* For large devices */}
-            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 z-10'>
-                <div className='grid grid-cols-2   xl:w-[90%] w-full m-auto'>
-                    {
-                        tabs.map((tab) => (
-                            <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-sm '>
-                                <div className='w-full flex justify-start gap-x-2 bg-slate-2 text-blue-main hover:bg-blue-main hover:text-white p-6  rounded-full group'>
-                                    <span className=' '>{tab.icon}</span>
-                                    <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
-                                </div>
-                                <div>
-                                    <ul className='flex flex-col gap-y-4 justify-center items-start'>
-                                        {tab.content.map((item, index) => (
-                                            <div className='flex gap-2 justify-start items-center'>
-                                                {(tab.id === 2) && <FaExternalLinkAlt fill='blue-main' />}
-                                                <li key={index} className='hover:text-blue-main  text-lg'><a href="">{item}</a></li>
-                                            </div>
-                                        ))}
-                                    </ul>
-                                </div>
+        {/* For large devices */}
+        <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 z-10'>
+            <div className='grid grid-cols-2   xl:w-[90%] w-full m-auto'>
+                {
+                    tabs.map((tab) => (
+                        <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-sm '>
+                            <div className='w-full flex justify-start gap-x-2 bg-slate-100 text-blue-main hover:bg-blue-main hover:text-white p-6  rounded-full group'>
+                                <span className=' '>{tab.icon}</span>
+                                <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
                             </div>
-                        ))
-                    }
-                </div>
+                            <div>
+                                <ul className='flex flex-col gap-y-4 justify-center items-start'>
+                                    {tab.content.map((item, index) => (
+                                       <div className='flex gap-2 justify-start items-center'>
+                                        {(tab.id===2) && <FaExternalLinkAlt fill='blue-main'/> }
+                                         <li key={index} className='hover:text-blue-main  text-lg'><a href="">{item}</a></li>
+                                       </div>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
 
             </section>
 
