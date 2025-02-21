@@ -41,7 +41,7 @@ const ForgotPassword = () => {
         }
     };
     return (
-        <section className='bg-auth-bg  h-screen flex flex-row items-center justify-center overflow-x-hidden'>
+        <section className='bg-auth-bg  flex flex-row items-center justify-center overflow-x-hidden mt-10'>
             {/* Left Section */}
             <div className=' md:w-[40%] w-[30%] h-screen sm:flex flex-col justify-between p-6 hidden'>
                 {/* Logo and Back Link */}
@@ -88,7 +88,7 @@ const ForgotPassword = () => {
             <div className=' md:w-[60%] sm:w-[75%] w-[90%] bg-white flex flex-col items-center justify-between sm:min-h-screen min-h-[80%]  p-4'>
                 {/* main content section */}
                 <div className='w-full flex flex-col items-center gap-10'>
-                    <div className='w-full flex flex-col items-center gap-4'>
+                    <div className='w-full flex flex-col items-center gap-4 mt-10'>
                         <h2 className='text-font-3xl font-bold mb-4'>{mainContent.heading}</h2>
                         <hr className='bg-gray-400 w-full h-[1px]' />
                     </div>
