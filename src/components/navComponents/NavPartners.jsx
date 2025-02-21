@@ -54,7 +54,7 @@ const NavPartners = () => {
                                     {tab.content.map((item, index) => (
                                        <div className='flex gap-2 justify-start items-center'>
                                         {(tab.id===2) && <FaExternalLinkAlt fill='blue-main'/> }
-                                         <li key={index} className='hover:text-blue-main  text-lg'><a href="">{item}</a></li>
+                                         <li key={index} className='hover:text-blue-main  text-lg'><a href="_">{item}</a></li>
                                        </div>
                                     ))}
                                 </ul>

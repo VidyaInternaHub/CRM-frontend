@@ -1,0 +1,17 @@
+{
+  "main": {
+    "heroSection": {
+      "title": "The only business software you will ever need",
+      "description": "Replace a multitude of services and apps with a single, AI-powered solution.",
+      "image": "../assets/images/product-tools/img-tools-main.png.webp"
+    }
+  },
+  "tools": [
+    {
+      "id": 0,
+      "title": "CRM",
+      "description": "Sell more. Sell better. Sell faster with Bitrix24 a single platform to cover all your needs.",
+      "hero_image": "../src/assets/images/product-tools/crm-main.png.webp"
+    }
+  ]
+}

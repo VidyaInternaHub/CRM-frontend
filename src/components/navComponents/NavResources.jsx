@@ -49,7 +49,7 @@ const NavResources = () => {
     return (
         <>
             {/* For large devices */}
-            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg px-6 pb-6 z-10'>
+            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 z-10'>
                 <div className='grid grid-cols-3   xl:w-[90%] w-full m-auto'>
                     {
                         tabs.map((tab) => (
