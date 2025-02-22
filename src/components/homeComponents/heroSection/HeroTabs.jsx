@@ -22,16 +22,19 @@ const tabs = [
     replaces: [
       {
         id: 0,
+        label:"Zoho",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-zoho.svg?1734079210752",
       },
       {
         id: 1,
+        label:"Salesforce",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-saleforce.svg?1734079210752",
       },
       {
         id: 2,
+        label:"Hubspot",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-hubspot.svg?1734079210752",
       },
@@ -55,16 +58,19 @@ const tabs = [
     replaces: [
       {
         id: 0,
+        label: "clickup",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-clickup.svg?1734079210752",
       },
       {
         id: 1,
+        label: "sharepoint",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-sharepoint.svg?1734079210752",
       },
       {
         id: 2,
+        label:"smarsheet",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-smarsheet.svg?1734079210752",
       },
@@ -88,16 +94,19 @@ const tabs = [
     replaces: [
       {
         id: 0,
+        label:"jira",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-jira.svg?1734079210752",
       },
       {
         id: 1,
+        label:"trello",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-trello.svg?1734079210752",
       },
       {
         id: 2,
+        label:"asana",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-asana.svg?1734079210752",
       },
@@ -121,6 +130,7 @@ const tabs = [
     replaces: [
       {
         id: 0,
+        label:"wix",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-wix.svg?1734079210752",
       },
@@ -144,16 +154,19 @@ const tabs = [
     replaces: [
       {
         id: 0,
+        label:"OrangeHRM",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-orangehrm.svg?1734079210752",
       },
       {
         id: 1,
+        label:"twilio",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-twilio.svg?1734079210752",
       },
       {
         id: 2,
+        label:"bamboo hr",
         image:
           "https://www.bitrix24.in/images/content_en/icons/alternatives/i-bamboohr.svg?1734079210752",
       },
@@ -210,13 +223,13 @@ const HeroTabs = () => {
           >
             <span className="text-font-xl">{tab.label}</span>
             {activeTab === tab.id && (
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-main bg-opacity-40">
+              <div className="absolute bottom-0 left-0 w-full h-[0.18rem] bg-blue-main bg-opacity-30">
                 <ProgressBar progress={progress} />
               </div>
             )}
           </div>
         ))}
-        <div className="absolute bottom-0 w-full h-[3px] bg-blue-main bg-opacity-20"></div>
+        <div className="absolute bottom-0 w-full h-[2px] bg-blue-main bg-opacity-20"></div>
       </div>
       {/* ----------tabs for mobile and tablet view--------- */}
       <div className="w-full order-2 ">
@@ -258,7 +271,8 @@ const HeroTabs = () => {
                 <div className="flex gap-2 my-4 items-center md:self-start">
                   Replaces:
                   {tab.replaces.map((item) => (
-                    <img key={item.id} src={item.image} alt="logo" />
+                    <a href={`/alternatives/free-${item.label.trim()}`}><img key={item.id} src={item.image} alt="logo" /></a>
+                    
                   ))}{" "}
                   and{" "}
                   <a href="#_" className="underline underline-offset-1">

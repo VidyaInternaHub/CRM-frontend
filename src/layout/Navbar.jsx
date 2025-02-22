@@ -42,11 +42,10 @@ const SearchBox = () => {
 };
 
 const NavButtons = ({ data, active, setActive, className }) => {
-
   return (
     <>
       <div
-        className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold items-center text-black-1lg:text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-font-sm`}
+        className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold items-center text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-font-2sm`}
       >
         {data.map((btn, index) => (
           <>
@@ -108,17 +107,23 @@ const Navbar = () => {
 
   return (
     <div>
-      <navContext.Provider value={{productId, setProductId}}>
+      <navContext.Provider value={{ productId, setProductId }}>
         <header
           // ref={navRef}
           className="border-box fixed bg-white top-0 w-full shadow-md flex justify-center z-50"
         >
-          <nav className="lg:max-w-nav w-full flex justify-between p-1 h-20 items-center px-5">
+          <nav className="max-w-nav w-full flex justify-between p-1 h-20 items-center px-5">
             <div className="flex items-center justify-start gap-2">
               <div className="flex h-7 lg:hidden overflow-hidden">
                 <MenuIcon isOpen={isOpen} setOpen={setOpen} />
               </div>
-              <img src={logo} alt="logo" className=" overflow-hidden" />
+              <a href="/">
+                <img
+                  src={logo}
+                  alt="logo"
+                  className=" overflow-hidden h-5 max-w-[195px] xl:h-[30px]"
+                />
+              </a>
             </div>
             <div className="hidden lg:flex items-center justify-center px-2">
               <NavButtons
@@ -134,7 +139,7 @@ const Navbar = () => {
               <button className="rounded-full py-1.5 px-4 lg:rounded-xl  lg:py-3 lg:px-2  bg-green-button ">
                 START FOR FREE
               </button>
-              <button className="hidden lg:flex gap-1 border-2 border-blue-main rounded-lg px-2 py-2.5 text-blue">
+              <button className="hidden lg:flex gap-1 border-2 border-blue-main rounded-xl px-2 py-2.5 text-blue-main">
                 <ImUser className="text-font-base" />
                 <p>LOG IN</p>
               </button>
@@ -162,17 +167,16 @@ const Navbar = () => {
               />
             </div>
             <div className="flex flex-col gap-2 items-center px-2 py-5 text-font-base font-semibold">
-              <button className="rounded-xl w-full h-11 min-w-32 max-w-72 bg-green-button ">
+              <button className="rounded-xl w-full h-11 min-w-32 max-w-72 bg-green-button text-black-2">
                 START FOR FREE
               </button>
-              <button className="flex items-center gap-2 justify-center rounded-xl w-full h-11 min-w-32 max-w-72 border-2 border-blue-main text-blue">
+              <button className="flex items-center gap-2 justify-center rounded-xl w-full h-11 min-w-32 max-w-72 border-2 border-blue-main text-blue-main">
                 <ImUser className="text-font-base" />
                 <p>LOG IN</p>
               </button>
               <button className="flex items-center gap-2 justify-center rounded-xl w-full h-11 min-w-32 max-w-72 border-2 border-blue-main text-blue">
-                {" "}
-                <FaGlobeAmericas />
-                <p className="text-black-2">EN</p>{" "}
+                <FaGlobeAmericas className="text-blue-main" />
+                <p className="text-black-2">EN</p>
               </button>
             </div>
           </div>
