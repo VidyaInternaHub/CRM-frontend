@@ -44,8 +44,6 @@ export const forgotPasswordData = {
   },
 };
 
-
-
 export const HeroContentData = {
   title: "Bitrix24 has something for every team and department",
   tabs: [
@@ -355,7 +353,6 @@ export const NavResourcesData = {
   ]
 };
 
-
 export const NavSolutionsData = {
    tabs : [
     {
@@ -405,7 +402,6 @@ solutionButton:{
 }
 };
 
-
 export const SolutionPageData ={
   title:"Bitrix24 solutions",
    solutionsCards : [
@@ -414,19 +410,19 @@ export const SolutionPageData ={
       title: "Role",
       content: [
         {
-          link: "",
+          link: "/solutions/roles/marketing",
           name: "Marketing"
         },
         {
-          link: "",
+          link: "/solutions/roles/hr",
           name: "HR"
         },
         {
-          link: "",
+          link: "/solutions/roles/project-management",
           name: "Project Management"
         },
         {
-          link: "",
+          link: "/solutions/roles/customer-service",
           name: "Customer Service"
         },
       ],
