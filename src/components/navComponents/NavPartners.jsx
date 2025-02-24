@@ -27,7 +27,7 @@ const NavPartners = () => {
             <div className='grid grid-cols-2   xl:w-[90%] w-full m-auto'>
                 {
                     tabs.map((tab) => (
-                        <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start  py-5 px-2  text-sm '>
+                        <div key={tab.id} className='flex flex-col gap-y-4 justify-start items-start   py-5 px-2  text-sm '>
                             <div className='w-full flex justify-start gap-x-2 bg-slate-100 text-blue-main hover:bg-blue-main hover:text-white p-6  rounded-full group'>
                                 <span className=' '>{tab.icon}</span>
                                 <span className='font-bold text-black group-hover:text-white'>{tab.label}</span>
