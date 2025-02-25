@@ -1,15 +1,35 @@
-import React, { useEffect, useState, useContext } from "react";
-import ProductMenu from "./ProductMenu";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-// import Dropdown from "./Dropdown";
-import Accordion, { List } from "./Accordion";
-import { navContext } from "../../layout/Navbar";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
+import InterpreterModeRoundedIcon from "@mui/icons-material/InterpreterModeRounded";
+import EqualizerRoundedIcon from "@mui/icons-material/EqualizerRounded";
+import { TbReportMoney } from "react-icons/tb";
+import { FaMobileAlt, FaRegCalendarAlt, FaShoppingCart } from "react-icons/fa";
+import RocketLaunchRoundedIcon from "@mui/icons-material/RocketLaunchRounded";
+import { IoMdSettings } from "react-icons/io";
+import { IoDocumentTextOutline, IoTime } from "react-icons/io5";
+import { PiTreeViewFill } from "react-icons/pi";
+import { LuCalendarClock, LuListCheck } from "react-icons/lu";
+import TimelapseRoundedIcon from "@mui/icons-material/TimelapseRounded";
+import { MobileFriendly, Settings } from "@mui/icons-material";
+import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
+import CoPilotIcon from "../components/navComponents/CoPilotIcon";
+import { BsPersonWorkspace } from "react-icons/bs";
+import ThreePRoundedIcon from '@mui/icons-material/ThreePRounded';
+import { CgWebsite } from "react-icons/cg";
+import { RiPagesLine } from "react-icons/ri";
+import MarkunreadRoundedIcon from '@mui/icons-material/MarkunreadRounded';
+import { MdWidgets } from "react-icons/md";
+import { FaHandshakeSimple } from "react-icons/fa6";
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 
-const tabs = [
+export const tabs = [
   {
     id: 1,
     label: "CRM",
     iconColor: "text-[#409EEF]",
+    cardColor: "bg-[#409EEF]",
+    pageUrl: "/tools/crm",
     icon: (
       <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -20,59 +40,74 @@ const tabs = [
         ></path>
       </svg>
     ),
+    image:
+      "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_try_picture/m-right-1.png.webp?1734079210752",
+    imageText: "Ready to manage your sales and clients with Bitrix24?",
+    description:
+      "Sell more. Sell better. Sell faster with Bitrix24 a single platform to cover all your needs.",
+    hero_image: "../src/assets/images/product-tools/crm-main.png.webp",
     tag: "Manage sales and clients effectively",
     content: [
       {
         id: 1,
         title: "Sales management",
+        icon: <FilterListRoundedIcon />,
         description:
           "Manage leads deals, contents pipelines, access permissions & roles ",
       },
       {
         id: 2,
         title: "Contact center",
+        icon: <BiSolidPhoneCall />,
         description:
           "Omnichannel communications via CRM forms, website widget, live chat, WhatsApp, Instagram, telephony, email",
       },
       {
         id: 3,
         title: "Sales team collaboration",
+        icon: <InterpreterModeRoundedIcon />,
         description:
           "Work with chat, video calls, tasks, calendar, file storage, online documents",
       },
       {
         id: 4,
         title: "Sales enablement",
+        icon: <TbReportMoney />,
         description:
           "Get estimates, invoices, payments, catalog, inventory, e-signature, CRM store",
       },
       {
         id: 5,
         title: "Analytics & reports",
+        icon: <EqualizerRoundedIcon />,
         description:
           "Analyze sales funnel, employee performance, Sales Intelligence, Bi Builder dashboards",
       },
       {
         id: 6,
         title: "Mobile CRM",
+        icon: <FaMobileAlt />,
         description:
           "Leads, deals, invoices, payments, telephony, emails, inventory, calender your fingertips",
       },
       {
         id: 7,
         title: "Marketing",
+        icon: <RocketLaunchRoundedIcon />,
         description:
           "Use email campaigns, social media ads, SMS, telemarketing, landing pages",
       },
       {
         id: 8,
         title: "Automation & integrations",
+        icon: <IoMdSettings />,
         description:
           "Set CRM rules and triggers, workflow automation, automated funnels, API",
       },
       {
         id: 9,
         title: "CoPilot in CRM",
+        icon: <CoPilotIcon />,
         description:
           "Call audio-to-text transcription, call summary, field autocompletion in deals",
       },
@@ -82,6 +117,8 @@ const tabs = [
     id: 2,
     label: "Tasks & Projects",
     iconColor: "text-[#BDF300]",
+    cardColor: "bg-[#BDF300]",
+    pageUrl: "/tools/tasks_and_projects",
     icon: (
       <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -93,59 +130,87 @@ const tabs = [
         ></path>
       </svg>
     ),
+    image:
+      "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_try_picture/w-left-1.png.webp?1734079210752",
+    imageText: "Ready to manage your tasks and projects with Bitrix24?",
     tag: "Get work done easier & faster",
     content: [
       {
         id: 1,
         title: "Task management",
+        icon: (
+          <svg
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            height="20.76"
+            width="20.76"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.382 20.265V16.06h3.882V4.736H4.735v11.323h3.882v4.206h7.765zM3.442 1.5h18.117c1.072 0 1.941.87 1.941 1.941V21.56c0 1.072-.87 1.941-1.941 1.941H3.44A1.941 1.941 0 0 1 1.5 21.559V3.44C1.5 2.37 2.37 1.5 3.441 1.5zm6.026 8.364 1.811 1.877 4.53-4.594 1.588 1.647-6.118 6.117-3.235-3.235 1.424-1.812z"
+              fill="currentColor"
+              // className="fill-current text-[#BDF300] "
+            ></path>
+          </svg>
+        ),
         description:
           "Choose between Kanban board, Gantt chart, Scrum, task list",
       },
       {
         id: 2,
         title: "Task tracking",
+        icon: <IoTime />,
         description:
           "Take advantage of checklists & sub-tasks, task summary, time tracking, focus & supervisor mode",
       },
       {
         id: 3,
         title: "API & integrations",
+        icon: <PiTreeViewFill />,
         description:
           "Connect your task to other services via API integration for advanced task automation",
       },
       {
         id: 4,
         title: "Project management",
+        icon: <LuListCheck />,
         description:
           "Use projects, workgroups, project planning, roles, access permissions",
       },
       {
         id: 5,
         title: "Employee performance",
+        icon: <TimelapseRoundedIcon />,
         description:
           "Get productive with task reports, workload management, task efficiency & KPI",
       },
       {
         id: 6,
         title: "Mobile tasks",
+        icon: <MobileFriendly />,
         description:
           "Task creation, task tracking notifications, comments, chat on the go",
       },
       {
         id: 7,
         title: "Project collaboration",
+        icon: <GroupsRoundedIcon />,
         description:
           "Work faster with chat, video calls, comments, file storage, documents, external users, task templates",
       },
       {
         id: 8,
         title: "Automation",
+        icon: <Settings />,
         description:
           "Save time with automatic task creation and workflow automation",
       },
       {
         id: 9,
         title: "CoPilot in Tasks",
+        icon: <CoPilotIcon />,
         description:
           "AI-generated task descriptions, task summaries, checklists, comments",
       },
@@ -155,6 +220,8 @@ const tabs = [
     id: 3,
     label: "Collaboration",
     iconColor: "text-[#FFB45C]",
+    cardColor: "bg-[#FFB45C]",
+    pageUrl: "/tools/communications",
     icon: (
       <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#a)">
@@ -173,47 +240,58 @@ const tabs = [
         </defs>
       </svg>
     ),
-    tag: "Get work done easier & faster",
+
+    image:
+      "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_try_picture/w-right-3.png.webp?1734079210752",
+    imageText: "Ready to improve your team collaboration with Bitrix24?",
+    tag: "Power up your teamwork",
     content: [
       {
         id: 1,
         title: "Online workspace",
+        icon: <BsPersonWorkspace />,
         description:
           "Use chat, activity feed, comments reactions, company-wide video announcements",
       },
       {
         id: 2,
         title: "Online documents & file storage",
+        icon: <IoDocumentTextOutline />,
         description:
           "Store, share and edit documents online easily with co-workers using company drive",
       },
       {
         id: 3,
         title: "Workgroups",
+        icon: <GroupsRoundedIcon />,
         description:
           "Create workgroups, invite external users, set access permissions and work on tasks and projects",
       },
       {
         id: 4,
         title: "Online meetings",
+        icon: <ThreePRoundedIcon/>,
         description:
           "Do more with video calls, video conferencing, screen sharing, call recording and custom backgrounds",
       },
       {
         id: 5,
         title: "Shared calendars",
+        icon: <FaRegCalendarAlt/>,
         description:
           "Plan with company & personal calendar, open time slots, meeting room booking, calendar sync",
       },
       {
         id: 6,
         title: "Mobile communications",
+        icon: <FaMobileAlt/>,
         description:
           "Team messenger, video calls, comments, calendar, notifications anywhere",
       },
       {
         id: 7,
         title: "CoPilot in Chat",
+        icon: <CoPilotIcon/>,
         description:
           "Unlimited source of ideas, AI-generated texts, brainstorming, and more",
       },
@@ -223,6 +301,8 @@ const tabs = [
     id: 4,
     label: "Site & Stores",
     iconColor: "text-[#F36DAB]",
+    cardColor: "bg-[#F36DAB]",
+    pageUrl: "/tools/websites",
     icon: (
       <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -232,59 +312,71 @@ const tabs = [
         ></path>
       </svg>
     ),
+    image:
+      "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_try_picture/m-left-3.png.webp?1734079210752",
+    imageText: "Read to create websites and online stores with Bitrix24?",
     tag: "Create websites that sell",
     content: [
       {
         id: 1,
         title: "Website builder",
+        icon: <CgWebsite/>,
         description:
           "Use our free CMS, templates, hosting, AI-generated images and texts to create awesome sites",
       },
       {
         id: 2,
         title: "Social selling",
+        icon: <TbReportMoney />,
         description:
           "Sell your products directly via Facebook, Instagram, WhatsApp or Telegram",
       },
       {
         id: 3,
         title: "Website forms",
+        icon: <BsPersonWorkspace />,
         description:
           "Capture leads with custom order forms, registration & feedback forms, and forms with conditional fields",
       },
       {
         id: 4,
         title: "Landing pages",
+        icon: <RiPagesLine/>,
         description:
           "Generate leads with capture forms, automated funnels and Google Analytics integration",
       },
       {
         id: 5,
         title: "Online store",
+        icon: <FaShoppingCart/>,
         description:
           "Maximize ecommerce with inventory management, order processing, delivery and online payments",
       },
       {
         id: 6,
-        title: "Mobile sites & online stores",
+        title: "Mobile websites & online stores",
+        icon: <FaMobileAlt/>,
         description:
           "Responsive design, online orders, client management in your pocket",
       },
       {
         id: 7,
         title: "Website widget",
+        icon: <MdWidgets/>,
         description:
           "Enable widget to chat with site visitors, use popular messengers and accept callback requests",
       },
       {
         id: 8,
-        title: "Online marketing tolls",
+        title: "Online marketing tools",
+        icon: <MarkunreadRoundedIcon/>,
         description:
           "Increase sales with email marketing, Facebook or Google Ads, marketing automation, CRM integration",
       },
       {
         id: 9,
         title: "CoPilot in Sites & Stores",
+        icon: <CoPilotIcon/>,
         description:
           "Compelling copy on demand, AI-generated images, detailed prompts, text translation",
       },
@@ -294,6 +386,8 @@ const tabs = [
     id: 5,
     label: "HR & Automation",
     iconColor: "text-[#66D74A]",
+    cardColor: "bg-[#66D74A]",
+    pageUrl: "/tools/hr_automation",
     icon: (
       <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -305,53 +399,64 @@ const tabs = [
         ></path>
       </svg>
     ),
+    image:
+      "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_try_picture/w-right-1.png.webp?1734079210752",
+    imageText: "Ready to manage employees and workflows with Bitrix324?",
     tag: "Optimize workflows & manage HR data",
     content: [
       {
         id: 1,
         title: "Employee management",
+        icon: <FaHandshakeSimple/>,
         description:
           "Use employee profiles, company structure, access permissions, Active Directory",
       },
       {
         id: 2,
         title: "Culture & engagement",
+        icon: <GroupsRoundedIcon />,
         description:
           "Get company news, polls, appreciation badges, tags, personal notifications",
       },
       {
         id: 3,
         title: "Mobile HR",
+        icon: <FaMobileAlt />,
         description:
           "Chat video calls, employee profiles, approvals, notifications on the go",
       },
       {
         id: 4,
         title: "Work management",
+        icon: <LuCalendarClock/>,
         description:
           "Track employee performance with KPI work reports, supervisor view",
       },
       {
         id: 5,
         title: "Internal communications",
+        icon: <QuestionAnswerIcon/>,
         description:
           "Communicate via video announcements, memos, public and private chats",
       },
       {
         id: 6,
         title: "CoPilot in fee",
+        icon: <CoPilotIcon/>,
         description:
           "Thread Summaries, AI-generated ideas, text editing & creation, AI-written responses, text translation",
       },
       {
         id: 7,
         title: "Information management",
+        icon: <SchoolRoundedIcon/>,
         description:
           "Work with knowledge bases, online documents, file storage, access permissions",
       },
       {
         id: 8,
         title: "Automation",
+        icon: <Settings/>,
         description:
           "Streamline operations with requests, approvals, expense reports, RPA, workflow automation",
       },
@@ -361,6 +466,8 @@ const tabs = [
     id: 6,
     label: "CoPilot",
     iconColor: "text-[#8E52EC]",
+    cardColor: "bg-[#8E52EC]",
+    pageUrl: "/tools/copilot-ai-powered-tools-for-business",
     icon: (
       <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#a)" fill="currentColor">
@@ -384,177 +491,46 @@ const tabs = [
         </defs>
       </svg>
     ),
+    image:
+      "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/bxw_blocks/bxw_block_try_picture/m-left-2.png.webp?1734079210752",
+    imageText: "Ready to try AI-powered assistant CoPilot in Bitrix24?",
     tag: "Your AI-powered assistant in Bitrix24",
     content: [
       {
         id: 1,
         title: "CoPilot in CRM",
+        icon: <CoPilotIcon/>,
         description:
           "Call audio-to-text transcription, call summary, field autocompletion in deals",
       },
       {
         id: 2,
         title: "CoPilot in Tasks",
+        icon: <CoPilotIcon/>,
         description:
           "AI-generated task descriptions, task summaries, checklists, comments",
       },
       {
         id: 3,
         title: "CoPilot in Chat",
+        icon: <CoPilotIcon/>,
         description:
           "Unlimited source of ideas, AI-generated texts, brainstorming, and more",
       },
       {
         id: 4,
         title: "CoPilot in Sites & Stores",
+        icon: <CoPilotIcon/>,
         description:
           "Compelling copy on demand, AI-generated images, detailed prompts, text translation",
       },
       {
         id: 5,
         title: "CoPilot in Feed",
+        icon: <CoPilotIcon/>,
         description:
           "Thread summaries, AI-generated ideas, text editing & creation, AI-written responses, text translation",
       },
     ],
   },
 ];
-
-const NavProduct = () => {
-  const value = useContext(navContext);
-  const [activeTab, setActiveTab] = useState(0);
-
-  const [selectedIdForLargeScreen, setSelectedIdForLargeScreen] = useState(
-    value.productId === 0 ? 1 : value.productId
-  );
-
-  useEffect(() => {
-    setSelectedIdForLargeScreen(value.productId === 0 ? 1 : value.productId);
-  }, [value.productId]);
-
-  console.log("component re-render");
-
-  return (
-    <>
-      {/* -------------for large screen---------- */}
-      <div className="lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 ">
-        <div className="flex max-w-[95%] justify-center mx-auto">
-          {/* -------menu buttons container------- */}
-          <div className="min-w-[22.5rem] mr-3 flex flex-col gap-[0.3rem]">
-            {tabs.map((tab) => (
-              <a
-                href={`/tools/${tab.label.toLowerCase()}/`}
-                className="flex items-center"
-                onMouseEnter={() => value.setProductId(tab.id)}
-              >
-                <ProductMenu
-                  key={tab.id}
-                  className={
-                    selectedIdForLargeScreen === tab.id
-                      ? "bg-blue-main text-white"
-                      : "bg-gray-menu"
-                  }
-                >
-                  <div className="flex items-center gap-3">
-                    <span
-                      className={`icon h-6 w-6 ${
-                        selectedIdForLargeScreen === tab.id
-                          ? "text-white"
-                          : tab.iconColor
-                      }`}
-                    >
-                      {tab.icon}
-                    </span>
-                    <span className="uppercase">{tab.label}</span>
-                  </div>
-                  <MdOutlineKeyboardArrowRight
-                    className={`text-font-3xl font-normal ${
-                      tab.id === selectedIdForLargeScreen
-                        ? "text-white"
-                        : "text-gray-1"
-                    }`}
-                  />
-                </ProductMenu>
-              </a>
-            ))}
-            <div className=" text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5">
-              <a href="/tools">
-                <div className="hover:text-blue-main w-fit flex cursor-pointer items-center">
-                  <span>See all tools</span>
-                  <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          {/* ------menu content------- */}
-          <div className="max-w-[56.625rem] border-l-4 border-opacity-40 border-gray-1 bg-white pl-8 pr-5 ">
-            {/* --------menu content title-------- */}
-            <div className="container xl:pb-8 pb-5">
-              <div className="w-fit bg-white cursor-pointer group">
-                <div className="text-font-2xl font-bold flex gap-3 items-center mb-1">
-                  <span
-                    className={`icon h-6 w-6 ${
-                      tabs[selectedIdForLargeScreen - 1].iconColor
-                    }`}
-                  >
-                    {tabs[selectedIdForLargeScreen - 1].icon}
-                  </span>
-                  <span className={`capitalize group-hover:text-blue-main`}>
-                    {tabs[selectedIdForLargeScreen - 1].label}
-                  </span>
-                </div>
-                <div className="text-left text-gray-2">
-                  {tabs[selectedIdForLargeScreen - 1].tag}
-                </div>
-              </div>
-            </div>
-
-            {/* --------menu content items in grid view -------- */}
-            <div className=" bg-white">
-              <div className="max-h-[17rem] xl:max-h-[19.5rem] overflow-y-auto">
-                <div className="grid grid-rows-3 grid-cols-2 xl:grid-cols-3 gap-2 text-left ">
-                  {tabs[selectedIdForLargeScreen - 1].content.map((item) => (
-                    <div
-                      key={item.id}
-                      className=" pt-1.5 pb-3 pr-6 xl:pb-4 group cursor-pointer"
-                    >
-                      <div className="text-font-base font-semibold mb-1 group-hover:text-blue-main">
-                        {item.title}
-                      </div>
-                      <div className="text-font-sm leading-4">
-                        {item.description}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-font-base font-semibold flex justify-end gap-1 items-center mt-2.5">
-                <a href={`/tools/${tabs[selectedIdForLargeScreen - 1].url}`}>
-                  <div className="hover:text-blue-main w-fit flex cursor-pointer items-center">
-                    <span>
-                      See all {tabs[selectedIdForLargeScreen - 1].label}{" "}
-                      features
-                    </span>
-                    <MdOutlineKeyboardArrowRight className="text-blue-main text-font-3xl font-light" />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ------------for small screen----------- */}
-      <div className="lg:hidden">
-        {tabs.map((tab) => (
-          <Accordion tab={tab} activeId={activeTab} setActiveId={setActiveTab}>
-            <List tab={tab} />
-          </Accordion>
-        ))}
-      </div>
-    </>
-  );
-};
-
-export default NavProduct;
