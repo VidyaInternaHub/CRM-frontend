@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./layout/Navbar";
 import HomePage from "./pages/HomePage";
-import ForgotPassword from './pages/ForgotPassword'
+import ForgotPassword from "./pages/ForgotPassword";
+import ProductTools from "./pages/ProductTools";
 
 function App() {
   return (
@@ -9,9 +10,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-
-          <Route path='/' element={<HomePage />} />
-          <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/tools" element={<ProductTools />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     </div>

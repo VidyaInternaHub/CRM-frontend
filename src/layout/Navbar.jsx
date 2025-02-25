@@ -11,6 +11,7 @@ import NavProduct from "../components/navComponents/NavProduct";
 import NavSolutions from "../components/navComponents/NavSolutions";
 import NavResources from "../components/navComponents/NavResources";
 import NavPartners from "../components/navComponents/NavPartners";
+import StartForFreeBtn from "../components/common/buttons/StartForFreeBtn";
 
 export const navContext = createContext(0);
 
@@ -87,9 +88,6 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [productId, setProductId] = useState(0);
 
-  console.log("navbar re-rendered");
-  console.log("active=" + active);
-
   // const navRef = useClickOutside(() => setActive(0));
 
   useEffect(() => {
@@ -112,7 +110,7 @@ const Navbar = () => {
           // ref={navRef}
           className="border-box fixed bg-white top-0 w-full shadow-md flex justify-center z-50"
         >
-          <nav className="max-w-nav w-full flex justify-between p-1 h-20 items-center px-5">
+          <nav className="max-w-nav w-full flex justify-between p-1 h-16 items-center px-5">
             <div className="flex items-center justify-start gap-2">
               <div className="flex h-7 lg:hidden overflow-hidden">
                 <MenuIcon isOpen={isOpen} setOpen={setOpen} />
@@ -136,9 +134,7 @@ const Navbar = () => {
               <button>
                 <IoSearch className="hidden lg:flex text-gray-2 text-font-2xl" />
               </button>
-              <button className="rounded-full py-1.5 px-4 lg:rounded-xl  lg:py-3 lg:px-2  bg-green-button ">
-                START FOR FREE
-              </button>
+              <StartForFreeBtn/>
               <button className="hidden lg:flex gap-1 border-2 border-blue-main rounded-xl px-2 py-2.5 text-blue-main">
                 <ImUser className="text-font-base" />
                 <p>LOG IN</p>
