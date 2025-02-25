@@ -142,6 +142,145 @@ export const HandShakeIcon = ({ width, height }) => (
          1.45 1.525 2.245.123.221.22.452.194.713a.71.71 0 0 1-.092.286zm16.729.292 1.061-.111c.157.378.2.784.128 1.198-.126.714-.498 1.257-1.116 1.613-.092.053-.121.11-.133.213-.107.946-.595 1.604-1.459 1.945-.19.075-.281.164-.348.357a2.15 2.15 0 0 1-1.297 1.344 1.976 1.976 0 0 1-1.472.002c-.072-.028-.11-.024-.157.046-.366.543-.868.859-1.509.945-.513.07-.98-.048-1.407-.345-.345-.24-.691-.477-1.045-.722l.518-.866c.362.251.715.486 1.058.735.625.452 1.483.096 1.707-.607a1.941 1.941 0 0 0-.099-.072c-.809-.56-1.617-1.12-2.427-1.679-.133-.092-.213-.208-.202-.378a.393.393 0 0 1 .264-.362c.14-.056.268-.014.387.069l2.056 1.422c.377.262.76.516 1.13.786.23.168.482.185.73.113.477-.139.775-.47.893-.97.024-.1.003-.16-.085-.22-1.5-1.033-2.997-2.07-4.494-3.106-.186-.129-.261-.29-.221-.472a.39.39 0 0 1 .582-.26c.036.022.07.047.106.071 1.52 1.051 3.041 2.1 4.555 3.159.172.12.318.124.486.044.479-.226.735-.61.768-1.15.005-.084-.024-.143-.098-.193-1.74-1.2-3.478-2.404-5.216-3.607-.285-.197-.272-.581.025-.729a.362.362 0 0 1 .39.036l.837.58c1.444.997 2.89 1.993 4.33 2.996.108.075.19.074.299.021.651-.312.931-1.174.495-1.81-.01-.012-.015-.027-.02-.036zm-9.755 3.367c.766.096 1.254.919.948 1.614-.08.181-.194.346-.297.515-.209.347-.401.706-.636 1.033-.329.458-.971.548-1.43.23a23.526 23.526 0 0 1-2.306-1.852c-.858-.77-1.71-1.546-2.564-2.32-.234-.21-.435-.449-.545-.752-.108-.296-.101-.587.07-.863.21-.333.418-.666.623-1.002.277-.457.92-.646 1.436-.42.28.123.465.301.654.637a1.16 1.16 0 0 1 .877-.308c.245.012.47.099.664.253.39.31.63.84.371 1.476.557-.2 1.053-.114 1.438.35.388.468.383.975.033 1.512.235-.102.445-.13.664-.103zM23.834 6.62c.06.095.025.157-.022.23-.452.714-1.07 1.227-1.818 1.582-.43.204-.878.352-1.344.453-.238.026-.477.056-.716.077a.278.278 0 0 1-.158-.04c-.565-.344-1.127-.693-1.69-1.04l-1.691-1.038-1.464-.902-1.701-1.044c-.165-.1-.325-.207-.493-.3a.19.19 0 0 0-.153-.003c-.665.319-1.317.668-1.992.96-.77.332-1.567.409-2.364.072-.41-.173-.73-.464-.993-.823-.234-.32-.043-.736.222-.874.929-.486 1.812-1.051 2.702-1.604.324-.201.643-.412.972-.602.328-.19.685-.3 1.057-.353a.602.602 0 0 1 .18.01c1.383.233 2.766.468 4.15.699a.372.372 0 0 0 .214-.036c.866-.437 1.73-.878 2.592-1.32.067-.035.11-.043.176.016.51.463.94.998 1.36 1.544 1.07 1.39 2.03 2.856 2.974 4.336z" fill="currentColor" >
         </path>
     </svg>
-
 );
+
+export const ClosedBookIcon = ({ width, height }) => (
+    <svg width={width} height={height} viewBox="0 0 18 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 16.203c0 .343-.29.621-.646.621H4.038c-.74 0-1.345.583-1.347 1.294 0 .712.606 1.294 1.347 1.294h13.316c.357 0 .646.278.646.621v1.346c0 .343-.29.621-.646.621H4.038C1.817 22 0 20.253 0 18.118V3.882C0 1.747 1.817 0 4.038 0h13.316c.357 0 .646.278.646.621v15.582z"></path></svg>
+);
+
+export const ConnectIcon = ({ width, height }) => (
+    <svg width={width} height={height} viewBox="0 0 25 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M21.07 7.62H3.92c-.338 0-.61-.226-.61-.507v-2.08c0-.28.272-.505.61-.505h17.15c.34 0 .61.225.61.506v2.08c.068.28-.27.505-.61.505zm0 6.198H3.92c-.338 0-.61-.225-.61-.506v-2.08c0-.28.272-.505.61-.505h17.15c.34 0 .61.224.61.505v2.08c.068.281-.27.506-.61.506zM22.192.655H2.745C1.248.655 0 1.78 0 3.128v12.647c0 1.35 1.248 2.473 2.746 2.473h12.607c.188 0 .312.056.437.169l3.87 3.766c.374.337.998.112.998-.337v-3.092c0-.28.25-.506.562-.506h1.034c1.498 0 2.746-1.124 2.746-2.473V3.128C24.938 1.78 23.69.655 22.192.655z"></path></svg>
+);
+
+export const OpenBookIcon = ({ width, height }) => (
+    <svg width={width} height={height} viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.243 20V3.132C5.786.852 2.618.23 1.043.062.483.004 0 .468 0 1.056v14.648c0 .502.364.915.841.982 3.272.46 6.071 1.566 8.402 3.315zM2.652 9.188c1.856.287 3.452.787 4.787 1.506a.909.909 0 0 1 .366 1.2.837.837 0 0 1-1.15.381C5.497 11.652 4.08 11.208 2.4 10.95c-.466-.072-.789-.525-.72-1.011.07-.486.504-.822.97-.75zm4.787-2.332c-1.335-.72-2.931-1.22-4.787-1.507-.467-.072-.901.264-.97.75-.07.487.253.94.72 1.011 1.679.26 3.096.704 4.252 1.327a.838.838 0 0 0 1.151-.382.908.908 0 0 0-.366-1.2zM19.196 16.562c-1.66.262-5.552 1.089-8.439 3.35V3.129c2.218-1.676 4.937-2.716 8.157-3.12C19.488-.065 20 .39 20 .995V15.58c0 .49-.338.91-.804.983zm-6.688-5.868c1.335-.72 2.931-1.22 4.787-1.506.467-.072.901.264.97.75.07.486-.253.939-.72 1.01-1.679.26-3.096.704-4.252 1.327a.837.837 0 0 1-1.151-.382.908.908 0 0 1 .366-1.199zm4.787-5.345c-1.856.287-3.452.787-4.787 1.507a.908.908 0 0 0-.366 1.199.837.837 0 0 0 1.15.382c1.157-.623 2.574-1.067 4.254-1.327.466-.072.788-.524.72-1.01-.07-.487-.504-.823-.97-.75z"></path></svg>
+);
+
+export const FourBubbles = (
+    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8372 21.6745C18.2702 21.6745 22.6745 17.2702 22.6745 11.8372C22.6745 6.40428 18.2702 2 12.8372 2C7.40429 2 3 6.40428 3 11.8372C3 17.2702 7.40429 21.6745 12.8372 21.6745ZM34.481 47.2515C41.0005 47.2515 46.2857 41.9664 46.2857 35.4468C46.2857 28.9273 41.0005 23.6421 34.481 23.6421C27.9614 23.6421 22.6763 28.9273 22.6763 35.4468C22.6763 41.9664 27.9614 47.2515 34.481 47.2515ZM42.3499 11.8371C42.3499 16.1834 38.8264 19.7069 34.4801 19.7069C30.1337 19.7069 26.6103 16.1834 26.6103 11.8371C26.6103 7.49071 30.1337 3.96728 34.4801 3.96728C38.8264 3.96728 42.3499 7.49071 42.3499 11.8371ZM12.843 41.3474C16.1027 41.3474 18.7453 38.7048 18.7453 35.445C18.7453 32.1852 16.1027 29.5427 12.843 29.5427C9.58318 29.5427 6.94061 32.1852 6.94061 35.445C6.94061 38.7048 9.58318 41.3474 12.843 41.3474Z" fill="white"></path>
+    </svg>
+);
+
+
+export const HeadPhonesIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_headset_2)">
+        <defs>
+            <linearGradient id="svg_gradient_headset_2" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#headset"></use>
+    </svg>
+);
+
+export const LeadGenerationIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_person_care_3)">
+        <defs>
+            <linearGradient id="svg_gradient_person_care_3" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#person_care"></use>
+    </svg>
+);
+
+export const ClientManagementIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_person_card_4)">
+        <defs>
+            <linearGradient id="svg_gradient_person_card_4" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#person_card"></use>
+    </svg>
+);
+
+export const ThreePersonsIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_3_persons_6)">
+        <defs>
+            <linearGradient id="svg_gradient_3_persons_6" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#3_persons"></use>
+    </svg>
+);
+
+export const TasksandProjectsIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_window_double_check_7)">
+        <defs>
+            <linearGradient id="svg_gradient_window_double_check_7" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#window_double_check"></use>
+    </svg>
+);
+
+export const DocumentIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_file_8)">
+        <defs>
+            <linearGradient id="svg_gradient_file_8" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#file"></use>
+    </svg>
+);
+
+export const SocialNetworksIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_global_integration_9)">
+        <defs>
+            <linearGradient id="svg_gradient_global_integration_9" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#global_integration"></use>
+    </svg>
+);
+
+export const BotsandAiIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_robophone_10)">
+        <defs>
+            <linearGradient id="svg_gradient_robophone_10" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#robophone"></use>
+    </svg>
+);
+
+export const CalendarIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_calendar_11)">
+        <defs>
+            <linearGradient id="svg_gradient_calendar_11" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FC7F7"></stop>
+                <stop offset="1" stop-color="#409EEF"></stop>
+            </linearGradient>
+        </defs>
+        <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#calendar"></use>
+    </svg>
+);
+
+export const WEbFromsIcon = ({ width, height }) => (
+    <svg width={width} height={height} fill="url(#svg_gradient_web_design_12)">
+    <defs>
+      <linearGradient id="svg_gradient_web_design_12" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#2FC7F7"></stop>
+        <stop offset="1" stop-color="#409EEF"></stop>
+      </linearGradient>
+    </defs>
+    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#web_design"></use>
+  </svg>
+);
+
 

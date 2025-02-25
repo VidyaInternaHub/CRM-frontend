@@ -1,18 +1,33 @@
-import {siteLogoAuthIcon,ProjectManagementIcon,CommunicateViaIcon,WareHouseIcon,AnalyticsIcon,SalesIcon1,
- InvoiceIcon1,PaymentsServiceIcon, ProductCatalogIcon,
- ArrowTargetIcon,
- AutomationIcon,
- AdsIcon,
- TwoPersonsIcon,
- LiveChatIcon,
- NotificationIcon,
- callbackIcon1,
- HrIcon,
- ClockIcon,
- LockIcon,
- SpeakerIcon,
- SettingIcon,
- HandShakeIcon,
+import {
+  siteLogoAuthIcon, ProjectManagementIcon, CommunicateViaIcon, WareHouseIcon, AnalyticsIcon, SalesIcon1,
+  InvoiceIcon1, PaymentsServiceIcon, ProductCatalogIcon,
+  ArrowTargetIcon,
+  AutomationIcon,
+  AdsIcon,
+  TwoPersonsIcon,
+  LiveChatIcon,
+  NotificationIcon,
+  callbackIcon1,
+  HrIcon,
+  ClockIcon,
+  LockIcon,
+  SpeakerIcon,
+  SettingIcon,
+  HandShakeIcon,
+  ClosedBookIcon,
+  ConnectIcon,
+  OpenBookIcon,
+  FourBubbles,
+  HeadPhonesIcon,
+  LeadGenerationIcon,
+  ClientManagementIcon,
+  ThreePersonsIcon,
+  TasksandProjectsIcon,
+  DocumentIcon,
+  SocialNetworksIcon,
+  BotsandAiIcon,
+  CalendarIcon,
+  WEbFromsIcon
 } from './svgs'
 import projectManagementImage from '../assets/images/Project_management_image_crm.webp';
 import salesImage from '../assets/images/sales image crm.webp';
@@ -78,11 +93,11 @@ export const HeroContentData = {
         points: [
           {
             description: "Choose whichever works best for you: Kanban, Gantt chart, Scrum, etc.",
-            icon: <ProjectManagementIcon width={25} height={25}/>,
+            icon: <ProjectManagementIcon width={25} height={25} />,
           },
           {
             description: "Communicate with your team via chat and video calls.",
-            icon: <CommunicateViaIcon width={25} height={25}/>
+            icon: <CommunicateViaIcon width={25} height={25} />
           },
           {
             description: "Track, audit, and manage your stock across multiple warehouses",
@@ -90,7 +105,7 @@ export const HeroContentData = {
           },
           {
             description: "Analyze your campaign results to maximize ROI",
-            icon: <AnalyticsIcon width={25} height={25}/>
+            icon: <AnalyticsIcon width={25} height={25} />
           },
         ],
         image: projectManagementImage,
@@ -99,7 +114,7 @@ export const HeroContentData = {
     {
       id: 2,
       label: "Sales",
-      icon:SalesIcon1,
+      icon: SalesIcon1,
       content: {
         title: "Everything you need to power up your sales is here.",
         points: [
@@ -109,7 +124,7 @@ export const HeroContentData = {
           },
           {
             description: "Receive payments for your products and services online",
-            icon:PaymentsServiceIcon
+            icon: PaymentsServiceIcon
           },
           {
 
@@ -119,7 +134,7 @@ export const HeroContentData = {
           {
 
             description: "Organize and manage your product catalog",
-            icon:ProductCatalogIcon
+            icon: ProductCatalogIcon
           },
         ],
         image: salesImage,
@@ -135,11 +150,11 @@ export const HeroContentData = {
         points: [
           {
             description: "Launch segment-based email marketing campaigns",
-            icon:<ProjectManagementIcon width={25} height={25}/>
+            icon: <ProjectManagementIcon width={25} height={25} />
           },
           {
             description: "Create custom web forms to collect leads and add them to your CRM",
-            icon:<AutomationIcon width={25} height={25} />
+            icon: <AutomationIcon width={25} height={25} />
           },
           {
             description: "Set up and launch Facebook Ads and Google Ads campaigns",
@@ -147,7 +162,7 @@ export const HeroContentData = {
           },
           {
             description: "Analyze your campaign results to maximize ROI",
-            icon: <AnalyticsIcon width={25} height={25}/>
+            icon: <AnalyticsIcon width={25} height={25} />
           },
         ],
         image: marketingImage,
@@ -162,7 +177,7 @@ export const HeroContentData = {
         points: [
           {
             description: "Use our live chat widget to accept customer requests on your website",
-            icon:LiveChatIcon
+            icon: LiveChatIcon
           },
           {
             description: "Set up automation rules to notify your customers via SMS or email",
@@ -170,7 +185,7 @@ export const HeroContentData = {
           },
           {
             description: "Create and place a custom CRM form on your website to collect requests	",
-            icon:<AutomationIcon width={25} height={25} />
+            icon: <AutomationIcon width={25} height={25} />
           },
           {
             description: "Use a callback request widget to stay in touch with your site visitors",
@@ -193,11 +208,11 @@ export const HeroContentData = {
           },
           {
             description: "Manage all HR documents and employee profiles in one place",
-            icon:<HrIcon width={25} height={25} />
+            icon: <HrIcon width={25} height={25} />
           },
           {
             description: "Set up company structure and manage access permissions",
-            icon:<LockIcon width={25} height={25} />
+            icon: <LockIcon width={25} height={25} />
           },
           {
             description: "Post memos and company-wide announcements",
@@ -210,7 +225,7 @@ export const HeroContentData = {
   ],
 
   solutionTab: {
-    icon:<SettingIcon width={40} height={40} />,
+    icon: <SettingIcon width={40} height={40} />,
     link: "/solutions",
     text: "See all solution"
   },
@@ -225,13 +240,13 @@ export const NavPartnersData = {
     {
       id: 1,
       label: "FOR CLIENTS",
-      icon:<TwoPersonsIcon width={28} height={28}/>,
+      icon: <TwoPersonsIcon width={28} height={28} />,
       content: ["Partner directory", "For personal consultation"]
     },
     {
       id: 2,
       label: "FOR PARTNERS",
-      icon:<HandShakeIcon width={28} height={28} />,
+      icon: <HandShakeIcon width={28} height={28} />,
       content: ["Become Bitrix24 partner", "Partner login"],
     }
   ]
@@ -242,26 +257,20 @@ export const NavResourcesData = {
     {
       id: 1,
       label: "LEARN",
-      icon: (
-        <svg width="18" height="22" viewBox="0 0 18 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 16.203c0 .343-.29.621-.646.621H4.038c-.74 0-1.345.583-1.347 1.294 0 .712.606 1.294 1.347 1.294h13.316c.357 0 .646.278.646.621v1.346c0 .343-.29.621-.646.621H4.038C1.817 22 0 20.253 0 18.118V3.882C0 1.747 1.817 0 4.038 0h13.316c.357 0 .646.278.646.621v15.582z"></path></svg>
-      ),
+      icon: <ClosedBookIcon width={18} height={22} />,
       content: ["Webinars", "Helpdesk", "Guides & API Documentation"]
     },
     {
       id: 2,
       label: "CONNECT",
-      icon: (
-        <svg width="25" height="23" viewBox="0 0 25 23" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M21.07 7.62H3.92c-.338 0-.61-.226-.61-.507v-2.08c0-.28.272-.505.61-.505h17.15c.34 0 .61.225.61.506v2.08c.068.28-.27.505-.61.505zm0 6.198H3.92c-.338 0-.61-.225-.61-.506v-2.08c0-.28.272-.505.61-.505h17.15c.34 0 .61.224.61.505v2.08c.068.281-.27.506-.61.506zM22.192.655H2.745C1.248.655 0 1.78 0 3.128v12.647c0 1.35 1.248 2.473 2.746 2.473h12.607c.188 0 .312.056.437.169l3.87 3.766c.374.337.998.112.998-.337v-3.092c0-.28.25-.506.562-.506h1.034c1.498 0 2.746-1.124 2.746-2.473V3.128C24.938 1.78 23.69.655 22.192.655z"></path></svg>
-      ),
+      icon: <ConnectIcon width={25} height={23} />,
       content: ["Submit Ticket", "Contact local bitrix partner"],
 
     },
     {
       id: 3,
       label: "READ",
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.243 20V3.132C5.786.852 2.618.23 1.043.062.483.004 0 .468 0 1.056v14.648c0 .502.364.915.841.982 3.272.46 6.071 1.566 8.402 3.315zM2.652 9.188c1.856.287 3.452.787 4.787 1.506a.909.909 0 0 1 .366 1.2.837.837 0 0 1-1.15.381C5.497 11.652 4.08 11.208 2.4 10.95c-.466-.072-.789-.525-.72-1.011.07-.486.504-.822.97-.75zm4.787-2.332c-1.335-.72-2.931-1.22-4.787-1.507-.467-.072-.901.264-.97.75-.07.487.253.94.72 1.011 1.679.26 3.096.704 4.252 1.327a.838.838 0 0 0 1.151-.382.908.908 0 0 0-.366-1.2zM19.196 16.562c-1.66.262-5.552 1.089-8.439 3.35V3.129c2.218-1.676 4.937-2.716 8.157-3.12C19.488-.065 20 .39 20 .995V15.58c0 .49-.338.91-.804.983zm-6.688-5.868c1.335-.72 2.931-1.22 4.787-1.506.467-.072.901.264.97.75.07.486-.253.939-.72 1.01-1.679.26-3.096.704-4.252 1.327a.837.837 0 0 1-1.151-.382.908.908 0 0 1 .366-1.199zm4.787-5.345c-1.856.287-3.452.787-4.787 1.507a.908.908 0 0 0-.366 1.199.837.837 0 0 0 1.15.382c1.157-.623 2.574-1.067 4.254-1.327.466-.072.788-.524.72-1.01-.07-.487-.504-.823-.97-.75z"></path></svg>
-      ),
+      icon: <OpenBookIcon width={20} height={20} />,
       content: ["Latest articles", "Bitrix24 tips & updates",]
     }
   ]
@@ -363,18 +372,7 @@ export const SolutionPageData = {
           name: "Management & leadership"
         }
       ],
-      icon: (
-        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_1204_181)">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7504 24.5116L12.0882 14.7534L6.99479 16.0394L-1.74955e-06 8.97506L7.46111 7.09124L7.51325 7.1439L7.53878 7.11811L7.48664 7.06545L9.35192 -0.469835L16.3467 6.5945L15.148 11.4369L24.7561 21.1405C25.2318 20.9744 25.7425 20.8842 26.2741 20.8842C28.8386 20.8842 30.9174 22.9837 30.9174 25.5737C30.9174 28.1636 28.8386 30.2632 26.2741 30.2632C23.7097 30.2632 21.6308 28.1636 21.6308 25.5737C21.6308 25.2084 21.6721 24.8529 21.7504 24.5116V24.5116ZM3.80971 19.7175L7.97111 19.7175C7.392 21.5652 7.07962 23.5328 7.07962 25.574C7.07962 36.2803 15.6734 44.9596 26.2744 44.9596C36.8753 44.9596 45.4691 36.2803 45.4691 25.574C45.4691 14.8676 36.8753 6.18841 26.2744 6.18841C24.1 6.18841 22.01 6.55355 20.0613 7.22644L18.1453 3.62693C20.675 2.67078 23.4142 2.14797 26.2744 2.14797C39.0848 2.14797 49.4698 12.6361 49.4698 25.574C49.4698 38.5118 39.0848 49 26.2744 49C13.4639 49 3.07895 38.5118 3.07895 25.574C3.07895 23.5517 3.33267 21.5893 3.80971 19.7175V19.7175ZM11.9974 21.2151L15.6542 24.9083C15.6409 25.1284 15.6342 25.3504 15.6342 25.5739C15.6342 31.509 20.3981 36.3203 26.2748 36.3203C32.1515 36.3203 36.9154 31.509 36.9154 25.5739C36.9154 19.6388 32.1515 14.8275 26.2748 14.8275C26.144 14.8275 26.0137 14.8298 25.884 14.8346L22.1763 11.0901C23.4785 10.7149 24.8534 10.5141 26.2748 10.5141C34.5102 10.5141 41.1863 17.2566 41.1863 25.5739C41.1863 33.8912 34.5102 40.6337 26.2748 40.6337C18.0394 40.6337 11.3633 33.8912 11.3633 25.5739C11.3633 24.0582 11.585 22.5949 11.9974 21.2151Z" fill="white"></path>
-          </g>
-          <defs>
-            <clipPath id="clip0_1204_181">
-              <rect width="50" height="50" fill="white"></rect>
-            </clipPath>
-          </defs>
-        </svg>
-      )
+      icon: <ArrowTargetIcon width={50} height={50} />
     },
     {
       id: 3,
@@ -405,11 +403,7 @@ export const SolutionPageData = {
           name: "Remote"
         }
       ],
-      icon: (
-        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8372 21.6745C18.2702 21.6745 22.6745 17.2702 22.6745 11.8372C22.6745 6.40428 18.2702 2 12.8372 2C7.40429 2 3 6.40428 3 11.8372C3 17.2702 7.40429 21.6745 12.8372 21.6745ZM34.481 47.2515C41.0005 47.2515 46.2857 41.9664 46.2857 35.4468C46.2857 28.9273 41.0005 23.6421 34.481 23.6421C27.9614 23.6421 22.6763 28.9273 22.6763 35.4468C22.6763 41.9664 27.9614 47.2515 34.481 47.2515ZM42.3499 11.8371C42.3499 16.1834 38.8264 19.7069 34.4801 19.7069C30.1337 19.7069 26.6103 16.1834 26.6103 11.8371C26.6103 7.49071 30.1337 3.96728 34.4801 3.96728C38.8264 3.96728 42.3499 7.49071 42.3499 11.8371ZM12.843 41.3474C16.1027 41.3474 18.7453 38.7048 18.7453 35.445C18.7453 32.1852 16.1027 29.5427 12.843 29.5427C9.58318 29.5427 6.94061 32.1852 6.94061 35.445C6.94061 38.7048 9.58318 41.3474 12.843 41.3474Z" fill="white"></path>
-        </svg>
-      )
+      icon:FourBubbles
     },
     {
       id: 4,
@@ -486,49 +480,19 @@ export const SolutionPageData = {
               },
               {
                 titile: "Contact center",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_headset_2)">
-                    <defs>
-                      <linearGradient id="svg_gradient_headset_2" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#headset"></use>
-                  </svg>
-                ),
+                icon: <HeadPhonesIcon width={35} height={35} />,
                 image: AutomationImage,
                 description: "Businesses of all sizes need a contact center. Let Bitrix24 help you manage your communication channels with our CRM software. Integrate all chats, web forms, emails, and phone calls into one space."
               },
               {
                 titile: "Lead generation & nurturing",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_person_care_3)">
-                    <defs>
-                      <linearGradient id="svg_gradient_person_care_3" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#person_care"></use>
-                  </svg>
-                ),
+                icon:<LeadGenerationIcon width={35} height={35} />,
                 image: Leadgeneration,
                 description: "Bitrix24 brings teams together with multiple communication avenues and planning materials. Use Gantt charts, tasks, to-do lists, and calendars to collaborate on projects."
               },
               {
                 titile: "Client management",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_person_card_4)">
-                    <defs>
-                      <linearGradient id="svg_gradient_person_card_4" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#person_card"></use>
-                  </svg>
-                ),
+                icon: <ClientManagementIcon width={35} height={35} />,
                 image: Clientmanagement,
                 description: "Keeping all the information for each interaction and communication with a lead or client helps sales teams to stay current on relationships. All information for clients is kept in one central location for easy access, right in the CRM software."
               },
@@ -540,113 +504,43 @@ export const SolutionPageData = {
               },
               {
                 titile: "Marketing team collaboration",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_3_persons_6)">
-                    <defs>
-                      <linearGradient id="svg_gradient_3_persons_6" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#3_persons"></use>
-                  </svg>
-                ),
+                icon:<ThreePersonsIcon width={35} height={35} />,
                 image: TeamCollabration,
                 description: "Bitrix24 brings teams together with multiple communication avenues and planning materials. Use Gantt charts, tasks, to-do lists, and calendars to collaborate on projects."
               },
               {
                 titile: "Tasks and projects",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_window_double_check_7)">
-                    <defs>
-                      <linearGradient id="svg_gradient_window_double_check_7" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#window_double_check"></use>
-                  </svg>
-                ),
+                icon:<TasksandProjectsIcon width={35} height={35} />,
                 image: Tasks_Projects,
                 description: "Create customer tasks and projects to fulfill work for your company. The CRM marketing software from Bitrix24 will help your team accomplish more by organizing your work and increasing communication."
               },
               {
                 titile: "Document management",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_file_8)">
-                    <defs>
-                      <linearGradient id="svg_gradient_file_8" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#file"></use>
-                  </svg>
-                ),
+                icon: <DocumentIcon width={35} height={35} />,
                 image: DocumentManagement,
                 description: "Manage documents easily with Bitrix24's CRM software. Cloud storage allows you to store and organize your documents for easier access. Use access permissions to protect private or sensitive information."
               },
               {
                 titile: "Integration with social networks",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_global_integration_9)">
-                    <defs>
-                      <linearGradient id="svg_gradient_global_integration_9" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#global_integration"></use>
-                  </svg>
-                ),
+                icon: <SocialNetworksIcon width={35} height={35} />,
                 image: SocialNetworks,
                 description: "Customers communicate with companies in a variety of ways, including social networks. Provide faster responses by integrating social networks into your CRM software."
               },
               {
                 titile: "Bots and AI",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_robophone_10)">
-                    <defs>
-                      <linearGradient id="svg_gradient_robophone_10" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#robophone"></use>
-                  </svg>
-                ),
+                icon:<BotsandAiIcon width={35} height={35} />,
                 image: AIbotImage,
                 description: "Increase your company capabilities by adding bots and artificial intelligence (AI) to your site. This tool helps stretch your resources while still caring for your customers."
               },
               {
                 titile: "Group calendars",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_calendar_11)">
-                    <defs>
-                      <linearGradient id="svg_gradient_calendar_11" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#calendar"></use>
-                  </svg>
-                ),
+                icon: <CalendarIcon width={35} height={35} />,
                 image: GroupCalenderImage,
                 description: "Help everyone communicate more and stay in contact with expectations by posting due dates and team meetings in a calendar that everyone on the team can view."
               },
               {
                 titile: "CRM web forms",
-                icon: (
-                  <svg width="35" height="35" fill="url(#svg_gradient_web_design_12)">
-                    <defs>
-                      <linearGradient id="svg_gradient_web_design_12" x1="12.2654" y1="4.79825" x2="12.2654" y2="19.0852" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#2FC7F7"></stop>
-                        <stop offset="1" stop-color="#409EEF"></stop>
-                      </linearGradient>
-                    </defs>
-                    <use href="/images/content_common/icons/bxw_svg_icons.svg?1740147748005#web_design"></use>
-                  </svg>
-                ),
+                icon: <WEbFromsIcon width={35} height={35} />,
                 image: CrmWebFromsImage,
                 description: "Capture more leads by using CRM web forms. Not only can Bitrix24 help build your website, but you can also add in great sales tools, like web forms."
               },
@@ -657,26 +551,26 @@ export const SolutionPageData = {
               imaage: marketingBenifitsImage,
               quote: `“Bitrix24 pretty much does everything, but run your company for you.”`,
               quoteEdition: "Inc. Magazine",
-              quotesicon:quotesOpenSvg,
+              quotesicon: quotesOpenSvg,
             },
             mainPortion: {
               title: "Benefits of Bitrix24",
               description: "Using Bitrix24 can take your marketing plans to the next level by helping you organize your efforts. View your company data for work hours, SEO efforts, and track ROI with our CRM software. Other benefits of using Bitrix24 include being able to do the following:",
               points: [
                 {
-                  icon:blueTicksvg,
+                  icon: blueTicksvg,
                   text: "Automate routine tasks and free your time for what's really important"
                 },
                 {
-                  icon:blueTicksvg,
+                  icon: blueTicksvg,
                   text: "Know what your customers want before they do"
                 },
                 {
-                  icon:blueTicksvg,
+                  icon: blueTicksvg,
                   text: "DIY (Doesn't require automation consultants)"
                 },
                 {
-                  icon:blueTicksvg,
+                  icon: blueTicksvg,
                   text: "Save money on having all the tools in one place"
                 },
               ]
