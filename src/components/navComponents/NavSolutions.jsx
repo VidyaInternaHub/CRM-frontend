@@ -26,7 +26,7 @@ const NavSolutions = () => {
     return (
         <>
             {/* For large devices */}
-            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg px-6 pb-6'>
+            <section className='lg:block hidden w-full '>
                 <div className='grid grid-cols-5   xl:w-[95%] w-full m-auto'>
                     {
                         tabs.map((tab) => (
@@ -84,7 +84,7 @@ const NavSolutions = () => {
                                     >
                                         <ul className='flex flex-col justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
-                                                <div className='flex flex-col  w-full px-4 cursor-pointer'>
+                                                <div key={index} className='flex flex-col  w-full px-4 cursor-pointer'>
                                                     <li key={index} className='hover:text-blue-main text-font-sm ml-4 py-2'><a href="_">{item}</a></li>
                                                     <hr className='h-[1px] bg-gray-300 w-full' />
                                                 </div>

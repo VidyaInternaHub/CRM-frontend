@@ -3,7 +3,6 @@ import { IoSearch } from "react-icons/io5";
 import logo from "../assets/bitrix24-seeklogo.svg";
 import { ImUser } from "react-icons/im";
 import { FaGlobeAmericas } from "react-icons/fa";
-import DropdownContainer from "../components/navComponents/DropdownContainer";
 import MenuIcon from "../components/navComponents/MenuIcon";
 import NavButton from "../components/navComponents/NavButton";
 // import useClickOutside from "../hooks/useClickOutSide";
@@ -49,10 +48,10 @@ const NavButtons = ({ data, active, setActive, className }) => {
         className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold items-center text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-font-2sm`}
       >
         {data.map((btn, index) => (
-          <>
+          <div key={btn.id}>
             {/* -----------for large screen--------- */}
             <div
-              key={"0" + index}
+              key={"large_btn_"+btn.id}
               onClick={() => {
                 btn.id === 2 || active === btn.id
                   ? setActive(0)
@@ -66,7 +65,7 @@ const NavButtons = ({ data, active, setActive, className }) => {
             </div>
             {/* --------for small screen-------- */}
             <div
-              key={index}
+              key={"small_btn_"+btn.id}
               onClick={() => {
                 setActive(btn.id);
               }}
@@ -76,7 +75,7 @@ const NavButtons = ({ data, active, setActive, className }) => {
                 <NavButton btn={btn} active={active} setActive={setActive} />
               </div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </>
@@ -104,13 +103,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
       <navContext.Provider value={{ productId, setProductId }}>
         <header
           // ref={navRef}
           className="border-box fixed bg-white top-0 w-full shadow-md flex justify-center z-50"
         >
-          <nav className="max-w-nav w-full flex justify-between p-1 h-16 items-center px-5">
+          <nav className="max-w-nav w-full flex justify-between h-16 xl:h-20 items-center px-5">
             <div className="flex items-center justify-start gap-2">
               <div className="flex h-7 lg:hidden overflow-hidden">
                 <MenuIcon isOpen={isOpen} setOpen={setOpen} />
@@ -179,12 +178,10 @@ const Navbar = () => {
         ) : (
           // ------------dropdown for large screen---------
           active !== 0 && (
-            <div className="fixed hidden lg:flex h-auto w-full z-40">
-              <DropdownContainer>
+            <div className="hidden lg:flex fixed top-16 xl:top-20 w-full z-40 px-6 py-10 bg-white shadow-xl justify-center rounded-b-[36px]">
                 {![0, 2].includes(active) &&
                   NavButtonsData[active - 1].dropdown !== "" &&
                   NavButtonsData[active - 1].dropdown}
-              </DropdownContainer>
             </div>
           )
         )}

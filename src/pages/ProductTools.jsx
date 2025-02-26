@@ -6,7 +6,7 @@ const ProductTools = () => {
   return (
     <div>
       <ToolsHeroSection />
-      <AllTools/>
+      <AllTools />
     </div>
   );
 };

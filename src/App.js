@@ -12,8 +12,12 @@ import PricingPage from "./pages/PricingPage";
 
 function App() {
   return (
-    <div className="App font-bs-font  overflow-x-hidden">
-      <BrowserRouter>
+    <div className="font-bs-font">
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+        }}
+      >
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
