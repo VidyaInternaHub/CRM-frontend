@@ -3,7 +3,6 @@ import { IoSearch } from "react-icons/io5";
 import logo from "../assets/bitrix24-seeklogo.svg";
 import { ImUser } from "react-icons/im";
 import { FaGlobeAmericas } from "react-icons/fa";
-import DropdownContainer from "../components/navComponents/DropdownContainer";
 import MenuIcon from "../components/navComponents/MenuIcon";
 import NavButton from "../components/navComponents/NavButton";
 // import useClickOutside from "../hooks/useClickOutSide";
@@ -11,6 +10,7 @@ import NavProduct from "../components/navComponents/NavProduct";
 import NavSolutions from "../components/navComponents/NavSolutions";
 import NavResources from "../components/navComponents/NavResources";
 import NavPartners from "../components/navComponents/NavPartners";
+import StartForFreeBtn from "../components/common/buttons/StartForFreeBtn";
 
 export const navContext = createContext(0);
 
@@ -48,10 +48,10 @@ const NavButtons = ({ data, active, setActive, className }) => {
         className={`${className} lg:flex lg:justify-center font-bold lg:font-semibold items-center text-black-2 lg:px-0 text-[0.7rem] lg:gap-0 xl:text-font-2sm`}
       >
         {data.map((btn, index) => (
-          <>
+          <div key={btn.id}>
             {/* -----------for large screen--------- */}
             <div
-              key={"0" + index}
+              key={"large_btn_"+btn.id}
               onClick={() => {
                 btn.id === 2 || active === btn.id
                   ? setActive(0)
@@ -65,7 +65,7 @@ const NavButtons = ({ data, active, setActive, className }) => {
             </div>
             {/* --------for small screen-------- */}
             <div
-              key={index}
+              key={"small_btn_"+btn.id}
               onClick={() => {
                 setActive(btn.id);
               }}
@@ -75,7 +75,7 @@ const NavButtons = ({ data, active, setActive, className }) => {
                 <NavButton btn={btn} active={active} setActive={setActive} />
               </div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </>
@@ -86,9 +86,6 @@ const Navbar = () => {
   const [active, setActive] = useState(0);
   const [isOpen, setOpen] = useState(false);
   const [productId, setProductId] = useState(0);
-
-  console.log("navbar re-rendered");
-  console.log("active=" + active);
 
   // const navRef = useClickOutside(() => setActive(0));
 
@@ -106,13 +103,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
       <navContext.Provider value={{ productId, setProductId }}>
         <header
           // ref={navRef}
           className="border-box fixed bg-white top-0 w-full shadow-md flex justify-center z-50"
         >
-          <nav className="max-w-nav w-full flex justify-between p-1 h-20 items-center px-5">
+          <nav className="max-w-nav w-full flex justify-between h-16 xl:h-20 items-center px-5">
             <div className="flex items-center justify-start gap-2">
               <div className="flex h-7 lg:hidden overflow-hidden">
                 <MenuIcon isOpen={isOpen} setOpen={setOpen} />
@@ -136,9 +133,7 @@ const Navbar = () => {
               <button>
                 <IoSearch className="hidden lg:flex text-gray-2 text-font-2xl" />
               </button>
-              <button className="rounded-full py-1.5 px-4 lg:rounded-xl  lg:py-3 lg:px-2  bg-green-button ">
-                START FOR FREE
-              </button>
+              <StartForFreeBtn/>
               <button className="hidden lg:flex gap-1 border-2 border-blue-main rounded-xl px-2 py-2.5 text-blue-main">
                 <ImUser className="text-font-base" />
                 <p>LOG IN</p>
@@ -183,12 +178,10 @@ const Navbar = () => {
         ) : (
           // ------------dropdown for large screen---------
           active !== 0 && (
-            <div className="fixed hidden lg:flex h-auto w-full z-40">
-              <DropdownContainer>
+            <div className="hidden lg:flex fixed top-16 xl:top-20 w-full z-40 px-6 py-10 bg-white shadow-xl justify-center rounded-b-[36px]">
                 {![0, 2].includes(active) &&
                   NavButtonsData[active - 1].dropdown !== "" &&
                   NavButtonsData[active - 1].dropdown}
-              </DropdownContainer>
             </div>
           )
         )}

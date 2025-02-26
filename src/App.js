@@ -1,23 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./layout/Navbar";
 import HomePage from "./pages/HomePage";
-import ForgotPassword from './pages/ForgotPassword'
-import SolutionsPage from './pages/SolutionsPage'
+import ForgotPassword from "./pages/ForgotPassword";
+import ProductTools from "./pages/ProductTools";
+import SolutionsPage from "./pages/SolutionsPage";
 import SolutionsLayout from "./components/Solutions/layout/SolutionsLayout";
 import Marketing from "./components/Solutions/components/roles/Marketing";
 import HrComponent from "./components/Solutions/components/roles/HrComponent";
-import LoginPage from './pages/LoginPage';
+import LoginPage from "./pages/LoginPage";
 import PricingPage from "./pages/PricingPage";
-
 
 function App() {
   return (
-    <div className="App font-bs-font  overflow-x-hidden">
-      <BrowserRouter>
+    <div className="font-bs-font">
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+        }}
+      >
         <Navbar />
         <Routes>
-
-          <Route path='/' element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/tools" element={<ProductTools />} />
 
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
@@ -28,8 +32,7 @@ function App() {
           </Route>
 
           <Route path="/login" element={<LoginPage />} />
-          <Route path='/forgotpassword' element={<ForgotPassword />} />
-
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -16,8 +16,8 @@ export const List = ({ tab }) => {
   return (
     <ul className="flex flex-col text-gray-600 list-disc w-full text-font-sm font-normal">
       {tab.content.map((content, index) => (
-        <div key={index} className="flex flex-col w-full px-4 cursor-pointer">
-          <li className=" ml-5 py-3">
+        <div key={content.id} className="flex flex-col w-full px-4 cursor-pointer">
+          <li key={content.id} className=" ml-5 py-3">
             <a
               href={`/tools/${tab.label
                 .toLowerCase()
@@ -56,7 +56,7 @@ const Accordion = ({ tab, children }) => {
   }, [value.productId, tab.id]);
 
   return (
-    <div>
+    <div key={tab.id}>
       <button
         className={`w-full text-left p-4 focus:outline-none hover:bg-gray-0 hover:text-blue-main ${
           isOpen && "bg-gray-0"

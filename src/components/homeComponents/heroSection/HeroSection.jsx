@@ -29,7 +29,7 @@ const HeroSection = () => {
           <div className="flex gap-2 items-center opacity-80 lg:opacity-100">
             <img
               src="https://www.bitrix24.in/images/content_common/include/sections/company_count_section_v1/globe.svg"
-              alt=""
+              alt="globe"
             />
             <p>available in</p>
             <div className="lg:border-2 lg:border-white lg:rounded-full w-8 h-8 lg:bg-white lg:text-blue-main text-white">

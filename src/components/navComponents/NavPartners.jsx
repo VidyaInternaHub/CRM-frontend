@@ -23,7 +23,7 @@ const NavPartners = () => {
     return (
         <>
         {/* For large devices */}
-        <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 z-10'>
+        <section className='lg:block hidden w-full'>
             <div className='grid grid-cols-2   xl:w-[90%] w-full m-auto'>
                 {
                     tabs.map((tab) => (
@@ -35,9 +35,9 @@ const NavPartners = () => {
                             <div>
                                 <ul className='flex flex-col gap-y-4 justify-center items-start'>
                                     {tab.content.map((item, index) => (
-                                       <div className='flex gap-2 justify-start items-center'>
+                                       <div key={index} className='flex gap-2 justify-start items-center'>
                                         {(tab.id===2) && <FaExternalLinkAlt fill='blue-main'/> }
-                                         <li key={index} className='hover:text-blue-main  text-lg'><a href="">{item}</a></li>
+                                         <li key={index} className='hover:text-blue-main  text-lg'><a href="_">{item}</a></li>
                                        </div>
                                     ))}
                                 </ul>
@@ -78,7 +78,7 @@ const NavPartners = () => {
                                     openContent && activeTab === tab.id && <div className='w-full'>
                                         <ul className='flex flex-col justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
-                                                <div className='flex flex-col w-full px-4'>
+                                                <div key={index} className='flex flex-col w-full px-4'>
                                                     <li key={index} className='hover:text-blue-main  text-font-sm py-3 ml-4'><a href="_">{item}</a></li>
                                                     <hr className='h-[1px] bg-gray-300 w-full' />
                                                 </div>

@@ -23,7 +23,7 @@ const NavResources = () => {
     return (
         <>
             {/* For large devices */}
-            <section className='lg:block hidden absolute top-[100%] left-0 right-0 bg-white rounded-b-2xl shadow-lg p-6 pb-6 z-10'>
+            <section className='lg:block hidden w-full '>
                 <div className='grid grid-cols-3   xl:w-[90%] w-full m-auto'>
                     {
                         tabs.map((tab) => (
@@ -35,7 +35,7 @@ const NavResources = () => {
                                 <div>
                                     <ul className='flex flex-col gap-y-4 justify-center items-start'>
                                         {tab.content.map((item, index) => (
-                                            <div className='flex gap-2 justify-start items-center'>
+                                            <div key={index} className='flex gap-2 justify-start items-center'>
                                                 {((tab.id === 1 && index !== 0) || (tab.id === 2 && index === 0)) && <FaExternalLinkAlt fill='blue-main' />}
                                                 <li key={index} className='hover:text-blue-main ml-5 text-font-sm'><a href="_">{item}</a></li>
                                             </div>
@@ -77,7 +77,7 @@ const NavResources = () => {
                                     openContent && activeTab === tab.id && <div className='w-full'>
                                         <ul className='flex flex-col gap-y-2 justify-center items-start w-full list-disc text-gray-700'>
                                             {tabs[activeTab - 1].content.map((item, index) => (
-                                                <div className='flex flex-col w-full px-4'>
+                                                <div key={index} className='flex flex-col w-full px-4'>
                                                     <li key={index} className='hover:text-blue-main ml-5 text-font-sm py-2'><a href="_">{item}</a></li>
                                                     <hr className="h-[1px] bg-gray-50 w-full" />
                                                 </div>
