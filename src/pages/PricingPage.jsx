@@ -3,6 +3,7 @@ import Administrator from '../components/pricingComponents/pricingAdministratorS
 import PricingFAQ from '../components/pricingComponents/pricingFAQ_Section/PricingFAQ';
 import PricingPlanTable from '../components/pricingComponents/pricingPlansSection/PricingPlanTable';
 
+
 const PricingPage = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const PricingPage = () => {
       <PricingPlanTable/>
       <Administrator/>
       <PricingFAQ/>
+      
       {/* More Pricing Content Here */}
     </div>
   );

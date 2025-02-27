@@ -10,6 +10,10 @@ import HrComponent from "./components/Solutions/components/roles/HrComponent";
 import LoginPage from "./pages/LoginPage";
 import PricingPage from "./pages/PricingPage";
 
+import Prices from "./pages/Prices"
+import SelfHostedPage from "./pages/SelfHostedPage";
+
+
 function App() {
   return (
     <div className="font-bs-font">
@@ -32,7 +36,14 @@ function App() {
           </Route>
 
           <Route path="/login" element={<LoginPage />} />
+
+          <Route path="/solutions" element={<SolutionsPage/>} />
+          <Route path="/pricing" element={<PricingPage /> }  />
+          <Route path="/Prices" element={<Prices /> }  />
+          <Route path="/selfHost" element={<SelfHostedPage /> }  />
+
           <Route path="/forgotpassword" element={<ForgotPassword />} />
+
         </Routes>
       </BrowserRouter>
     </div>

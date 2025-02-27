@@ -1,6 +1,8 @@
+
 import React from "react";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+
 
 const plans = [
  
@@ -98,7 +100,7 @@ const plans = [
   },
 ];
 
-const PricingPlanTable = () => {
+const Pricing = () => {
   const [billing, setBilling] = useState("annually");
   const [featureStates, setFeatureStates] = useState(
     plans.reduce((acc, plan) => {
@@ -259,18 +261,17 @@ const PricingPlanTable = () => {
           </div>
         ))}
       </div>
-      <div className="text-center max-w-lg mt-8  underline decoration-dotted  text-blue-400 text-xl font-semibold">
-            
-            <Link to="/" > Detaild plan comparison</Link>  
+      <div className="text-center max-w-lg mt-8">
+            <a href="/" className=" underline decoration-dotted  text-blue-400 text-xl font-semibold">Detaild plan comparison</a>
       </div>
       <div className="mt-20">
         <button className="bg-blue-500  hover:bg-blue-400 text-lg text-white  py-2 px-6 rounded-full shadow-md transition-all">
-        <Link to="/" >   Save up to Rs. 310,000/mo with Bitrix24</Link>  
-       
+          
+          <Link to="/prices" > Save up to Rs. 310,000/mo with Bitrix24</Link>
         </button>
       </div>
     </div>
   );
 };
 
-export default PricingPlanTable;
+export default Pricing;
