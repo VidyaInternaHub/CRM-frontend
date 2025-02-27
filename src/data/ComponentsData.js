@@ -1,33 +1,10 @@
 import {
   siteLogoAuthIcon, ProjectManagementIcon, CommunicateViaIcon, WareHouseIcon, AnalyticsIcon, SalesIcon1,
-  InvoiceIcon1, PaymentsServiceIcon, ProductCatalogIcon,
-  ArrowTargetIcon,
-  AutomationIcon,
-  AdsIcon,
-  TwoPersonsIcon,
-  LiveChatIcon,
-  NotificationIcon,
-  callbackIcon1,
-  HrIcon,
-  ClockIcon,
-  LockIcon,
-  SpeakerIcon,
-  SettingIcon,
-  HandShakeIcon,
-  ClosedBookIcon,
-  ConnectIcon,
-  OpenBookIcon,
-  FourBubbles,
-  HeadPhonesIcon,
-  LeadGenerationIcon,
-  ClientManagementIcon,
-  ThreePersonsIcon,
-  TasksandProjectsIcon,
-  DocumentIcon,
-  SocialNetworksIcon,
-  BotsandAiIcon,
-  CalendarIcon,
-  WebFormsIcon
+  InvoiceIcon1, PaymentsServiceIcon, ProductCatalogIcon, ArrowTargetIcon, AutomationIcon, AdsIcon,
+  TwoPersonsIcon, LiveChatIcon, NotificationIcon, callbackIcon1, HrIcon, ClockIcon, LockIcon, SpeakerIcon,
+  SettingIcon, HandShakeIcon, ClosedBookIcon, ConnectIcon, OpenBookIcon, FourBubbles, HeadPhonesIcon,
+  LeadGenerationIcon, ClientManagementIcon, ThreePersonsIcon, TasksandProjectsIcon, DocumentIcon,
+  SocialNetworksIcon, BotsandAiIcon, CalendarIcon, WebFormsIcon
 } from './svgs'
 import projectManagementImage from '../assets/images/Project_management_image_crm.webp';
 import salesImage from '../assets/images/sales image crm.webp';
@@ -403,7 +380,7 @@ export const SolutionPageData = {
           name: "Remote"
         }
       ],
-      icon:FourBubbles
+      icon: FourBubbles
     },
     {
       id: 4,
@@ -486,7 +463,7 @@ export const SolutionPageData = {
               },
               {
                 title: "Lead generation & nurturing",
-                icon:<LeadGenerationIcon width={35} height={35} />,
+                icon: <LeadGenerationIcon width={35} height={35} />,
                 image: LeadGeneration,
                 description: "Bitrix24 brings teams together with multiple communication avenues and planning materials. Use Gantt charts, tasks, to-do lists, and calendars to collaborate on projects."
               },
@@ -504,13 +481,13 @@ export const SolutionPageData = {
               },
               {
                 title: "Marketing team collaboration",
-                icon:<ThreePersonsIcon width={35} height={35} />,
+                icon: <ThreePersonsIcon width={35} height={35} />,
                 image: TeamCollaboration,
                 description: "Bitrix24 brings teams together with multiple communication avenues and planning materials. Use Gantt charts, tasks, to-do lists, and calendars to collaborate on projects."
               },
               {
                 title: "Tasks and projects",
-                icon:<TasksandProjectsIcon width={35} height={35} />,
+                icon: <TasksandProjectsIcon width={35} height={35} />,
                 image: Tasks_Projects,
                 description: "Create customer tasks and projects to fulfill work for your company. The CRM marketing software from Bitrix24 will help your team accomplish more by organizing your work and increasing communication."
               },
@@ -528,7 +505,7 @@ export const SolutionPageData = {
               },
               {
                 title: "Bots and AI",
-                icon:<BotsandAiIcon width={35} height={35} />,
+                icon: <BotsandAiIcon width={35} height={35} />,
                 image: AIbotImage,
                 description: "Increase your company capabilities by adding bots and artificial intelligence (AI) to your site. This tool helps stretch your resources while still caring for your customers."
               },

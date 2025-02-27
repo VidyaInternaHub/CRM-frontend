@@ -5,11 +5,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ProductTools from "./pages/ProductTools";
 import SolutionsPage from "./pages/SolutionsPage";
 import SolutionsLayout from "./components/Solutions/layout/SolutionsLayout";
-import Marketing from "./components/Solutions/components/roles/Marketing";
-import HrComponent from "./components/Solutions/components/roles/HrComponent";
 import LoginPage from "./pages/LoginPage";
 import PricingPage from "./pages/PricingPage";
-
 import Prices from "./pages/Prices"
 import SelfHostedPage from "./pages/SelfHostedPage";
 
@@ -27,21 +24,14 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/tools" element={<ProductTools />} />
 
-          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/solutions/:category/:type" element={<SolutionsLayout />}/>
 
-          <Route path="/solutions/*" element={<SolutionsLayout />}>
-            <Route path="roles/marketing" element={<Marketing />} />
-            <Route path="roles/hr" element={<HrComponent />} />
-          </Route>
-
-          <Route path="/login" element={<LoginPage />} />
-
-          <Route path="/solutions" element={<SolutionsPage/>} />
           <Route path="/pricing" element={<PricingPage /> }  />
           <Route path="/Prices" element={<Prices /> }  />
           <Route path="/selfHost" element={<SelfHostedPage /> }  />
 
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
 
         </Routes>

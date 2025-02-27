@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { FaAngleDown } from "react-icons/fa6";
 import { FaAngleUp } from "react-icons/fa6";
-import { SolutionPageData } from '../../../data/ComponentsData'
 
-const SolutionsBar = () => {
+
+const SolutionsBar = ({solutionsCards,currentSolutionType}) => {
   const [activeCard, setActiveCard] = useState(null);
-  const { solutionsCards } = SolutionPageData;
+
 
   const handleContent = (id) => {
     setActiveCard((prevCard) => prevCard ? null : id)
@@ -50,10 +50,13 @@ const SolutionsBar = () => {
           }
         </nav>
 
-        <section className='bg-blue-main '>
-          <div className='flex flex-col gap-4 text-font-3xl h-52'>dsfjlkakdlfjsa</div>
-          <div>dsklfj</div>
-        </section>
+        {/* <section className='bg-blue-main '>
+          <div className='flex flex-col gap-4 text-font-3xl h-52'>
+            <h1>{currentSolutionType.title}</h1>
+            <h2>{currentSolutionType.tagline}</h2>
+          </div>
+          
+        </section> */}
       </section>
 
     </>
